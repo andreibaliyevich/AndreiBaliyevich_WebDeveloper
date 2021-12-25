@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}{% translate 'Error' %} 403{% endblock title %}
+
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+
+{% block content %}
+
+<section class="text-center py-5 my-5">
+  <img class="d-block mx-lg-auto img-fluid" src="{% static 'img/errors/403.png' %}" alt="">
+  <h1 class="display-5 fw-bold">{% translate 'Forbidden!' %}</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-5">
+      {% translate 'Accessing the page or resource you were trying to reach is absolutely forbidden for some reason.' %}<br>
+      {% translate 'Get in touch with the site owner.' %}
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'main:index' %}">{% translate 'Go Home' %}</a>
+      <a class="btn btn-outline-primary btn-lg px-4 me-sm-3" href="{% url 'contact:contact' %}">{% translate 'Contact me' %}</a>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+
+{% block javascript %}{% endblock javascript %}

@@ -1,0 +1,96 @@
+{% extends 'main/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}{% translate 'Portfolio' %}{% endblock title %}
+
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+
+{% block nav_portfolio %} active" aria-current="page{% endblock nav_portfolio %}
+
+
+{% block content %}
+
+<section class="position-relative bg-gradient" style="height: 390px;">
+  <div class="shape" style="padding-bottom: 6.2%;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+      <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="container position-relative px-md-5" style="margin-top: -390px; z-index: 5; padding-top: 7rem;">
+  <h1 class="display-3 fw-normal text-light text-center">{% translate 'Portfolio' %}</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 my-5">
+
+    {% for project in page_obj %}
+    <div class="col">
+      <a class="text-decoration-none link-dark" href="{{ project.get_absolute_url }}">
+        <div class="project-div h-100">
+          <img src="{{ project.thumbnail.url }}" class="project-img shadow-sm w-100" alt="{{ project.id }}">
+          <h5 class="project-name text-center p-3">{{ project.name }}</h5>
+        </div>
+      </a>
+    </div>
+    {% empty %}
+    <p class="text-center">{% translate 'No projects yet.' %}</p>
+    {% endfor %}
+
+  </div>
+
+  {% if page_obj.has_other_pages %}
+  <nav class="mb-5" aria-label="Page navigation">
+    <ul class="pagination justify-content-center mt-4">
+      {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+          <i class="fas fa-angle-left"></i>
+        </a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <i class="fas fa-angle-left"></i>
+        </a>
+      </li>
+      {% endif %}
+
+      {% for page_number in page_obj.paginator.page_range %}
+      {% if page_obj.number == page_number %}
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">{{ page_number }}</span>
+      </li>
+      {% elif page_number > page_obj.number|add:-4 and page_number < page_obj.number|add:4 %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</section>
+
+{% endblock content %}
+
+
+{% block javascript %}{% endblock javascript %}

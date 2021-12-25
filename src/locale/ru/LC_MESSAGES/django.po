@@ -1,0 +1,696 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-11 16:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: contact/models.py:7 main/models.py:172 portfolio/models.py:11
+#: templates/email/contact_to_email.html:5
+#: templates/email/contact_to_email_text.html:4
+msgid "Name"
+msgstr "Имя"
+
+#: contact/models.py:8 main/models.py:15
+#: templates/email/contact_to_email.html:6
+#: templates/email/contact_to_email_text.html:5
+msgid "Email"
+msgstr "Эл. адрес"
+
+#: contact/models.py:10 templates/email/contact_to_email.html:7
+#: templates/email/contact_to_email_text.html:6
+msgid "Content"
+msgstr "Содержание"
+
+#: contact/models.py:13
+msgid "Created at"
+msgstr "Создано"
+
+#: contact/models.py:17 templates/email/contact_to_email.html:2
+#: templates/email/contact_to_email_text.html:2
+msgid "Message"
+msgstr "Сообщение"
+
+#: contact/models.py:18
+msgid "Messages"
+msgstr "Сообщения"
+
+#: contact/views.py:15
+msgid "Your message has been sent!"
+msgstr "Ваше сообщение отправлено!"
+
+#: main/admin.py:34
+msgid "Personal info"
+msgstr "Личная информация"
+
+#: main/admin.py:47
+msgid "Permissions"
+msgstr "Разрешения"
+
+#: main/admin.py:56
+msgid "Important dates"
+msgstr "Важные даты"
+
+#: main/managers.py:11
+msgid "The Email must be set."
+msgstr "Электронная почта должна быть установлена."
+
+#: main/managers.py:25
+msgid "Superuser must have is_staff=True."
+msgstr "У суперпользователя должно быть is_staff=True."
+
+#: main/managers.py:27
+msgid "Superuser must have is_superuser=True."
+msgstr "У суперпользователя должно быть is_superuser=True."
+
+#: main/models.py:20 main/models.py:123
+msgid "First name"
+msgstr "Имя"
+
+#: main/models.py:25 main/models.py:124
+msgid "Last name"
+msgstr "Фамилия"
+
+#: main/models.py:37
+msgid "Avatar"
+msgstr "Аватар"
+
+#: main/models.py:45
+msgid "Wrong format!"
+msgstr "Неправильный формат!"
+
+#: main/models.py:48
+msgid "Phone"
+msgstr "Телефон"
+
+#: main/models.py:53 templates/main/about.html:50
+msgid "Date of Birth"
+msgstr "Дата рождения"
+
+#: main/models.py:59 main/models.py:126
+msgid "Address"
+msgstr "Адрес"
+
+#: main/models.py:63
+msgid "Location"
+msgstr "Место нахождения"
+
+#: main/models.py:66 main/models.py:128 templates/main/about.html:7
+#: templates/main/about.html:29 templates/main/base.html:47
+#: templates/main/base.html:93
+msgid "About"
+msgstr "Обо мне"
+
+#: main/models.py:67 main/models.py:129 templates/main/base.html:50
+#: templates/main/base.html:94 templates/main/experience.html:7
+#: templates/main/experience.html:27
+msgid "Experience"
+msgstr "Опыт"
+
+#: main/models.py:69
+msgid "Active"
+msgstr "Активный"
+
+#: main/models.py:72
+msgid "Staff status"
+msgstr "Статус персонала"
+
+#: main/models.py:76
+msgid "Superuser status"
+msgstr "Статус суперпользователя"
+
+#: main/models.py:81
+msgid "Last login"
+msgstr "Последний вход"
+
+#: main/models.py:85
+msgid "Date joined"
+msgstr "Дата присоединения"
+
+#: main/models.py:105 main/models.py:115 main/models.py:143 main/models.py:169
+msgid "User"
+msgstr "Пользователь"
+
+#: main/models.py:106
+msgid "Users"
+msgstr "Пользователи"
+
+#: main/models.py:120 portfolio/models.py:56
+msgid "Language"
+msgstr "Язык"
+
+#: main/models.py:132
+msgid "ABUser Translation"
+msgstr "ABUser перевод"
+
+#: main/models.py:133
+msgid "ABUser Translations"
+msgstr "ABUser переводы"
+
+#: main/models.py:148
+msgid "Name of icon"
+msgstr "Название иконки"
+
+#: main/models.py:150
+msgid "URL of Link"
+msgstr "URL ссылки"
+
+#: main/models.py:154 main/models.py:182
+msgid "Position"
+msgstr "Позиция"
+
+#: main/models.py:158
+msgid "Social Link"
+msgstr "Социальная ссылка"
+
+#: main/models.py:159
+msgid "Social Links"
+msgstr "Социальные ссылки"
+
+#: main/models.py:177
+msgid "Progress"
+msgstr "Прогресс"
+
+#: main/models.py:186
+msgid "Skill"
+msgstr "Навык"
+
+#: main/models.py:187
+msgid "Skills"
+msgstr "Навыки"
+
+#: portfolio/models.py:12
+msgid "Slug"
+msgstr "Слаг"
+
+#: portfolio/models.py:14 templates/portfolio/project_detail.html:38
+msgid "Cover"
+msgstr "Обложка"
+
+#: portfolio/models.py:23
+msgid "Thumbnail"
+msgstr "Эскиз"
+
+#: portfolio/models.py:26 portfolio/models.py:59
+msgid "Description"
+msgstr "Описание"
+
+#: portfolio/models.py:27
+msgid "Code URL"
+msgstr "URL кода"
+
+#: portfolio/models.py:28
+msgid "Project URL"
+msgstr "URL проекта"
+
+#: portfolio/models.py:30
+msgid "Start date"
+msgstr "Дата начала"
+
+#: portfolio/models.py:34
+msgid "End date"
+msgstr "Дата окончания"
+
+#: portfolio/models.py:41 portfolio/models.py:51 portfolio/models.py:73
+msgid "Project"
+msgstr "Проект"
+
+#: portfolio/models.py:42
+msgid "Projects"
+msgstr "Проекты"
+
+#: portfolio/models.py:62
+msgid "Project Translation"
+msgstr "Перевод проекта"
+
+#: portfolio/models.py:63
+msgid "Project Translations"
+msgstr "Переводы проектов"
+
+#: portfolio/models.py:75 templates/portfolio/project_detail.html:42
+msgid "Image"
+msgstr "Изображение"
+
+#: portfolio/models.py:78
+msgid "Project Image"
+msgstr "Изображение проекта"
+
+#: portfolio/models.py:79
+msgid "Project Images"
+msgstr "Изображения проекта"
+
+#: templates/admin/base.html:40
+msgid "Welcome,"
+msgstr ""
+
+#: templates/admin/base.html:45
+msgid "View site"
+msgstr ""
+
+#: templates/admin/base.html:50
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin/base.html:54
+msgid "Change password"
+msgstr ""
+
+#: templates/admin/base.html:56
+msgid "Log out"
+msgstr ""
+
+#: templates/admin/base.html:66 templates/main/base.html:44
+#: templates/main/base.html:92 templates/main/index.html:7
+msgid "Home"
+msgstr "Главная"
+
+#: templates/admin/base_site.html:3
+msgid "Django site admin"
+msgstr ""
+
+#: templates/admin/base_site.html:6
+msgid "Django administration"
+msgstr ""
+
+#: templates/contact/contact.html:7 templates/contact/contact.html:29
+#: templates/main/base.html:56 templates/main/base.html:96
+msgid "Contact"
+msgstr "Контакт"
+
+#: templates/contact/contact.html:39
+msgid "Close"
+msgstr "Закрыть"
+
+#: templates/contact/contact.html:47
+msgid "You can send me a message and I will get back to you as soon as I can."
+msgstr ""
+"Вы можете отправить мне сообщение, и я свяжусь с вами, как только смогу."
+
+#: templates/contact/contact.html:84 templates/contact/contact.html:85
+msgid "Your Name"
+msgstr "Ваше имя"
+
+#: templates/contact/contact.html:88 templates/contact/contact.html:89
+msgid "Your Email"
+msgstr "Ваш эл. адрес"
+
+#: templates/contact/contact.html:92 templates/contact/contact.html:93
+msgid "Your Message"
+msgstr "Ваше сообщение"
+
+#: templates/contact/contact.html:95
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+#: templates/contact/contact.html:97
+msgid ""
+"By clicking «Send Message», you agree with the storage and handling of your "
+"data by this website."
+msgstr ""
+"Нажимая «Отправить сообщение», вы соглашаетесь с хранением и обработкой "
+"ваших данных на этом веб-сайте."
+
+#: templates/email/contact_to_email.html:17
+#: templates/email/contact_to_email_text.html:10
+msgid "This is an automatic letter, do not reply to it."
+msgstr "Это автоматическое письмо, не отвечайте на него."
+
+#: templates/email/contact_to_email_subject.txt:1
+msgid "New Contact"
+msgstr "Новый контакт"
+
+#: templates/errors/400.html:7 templates/errors/403.html:7
+#: templates/errors/404.html:7 templates/errors/500.html:7
+msgid "Error"
+msgstr "Ошибка"
+
+#: templates/errors/400.html:17
+msgid "Bad Request!"
+msgstr "Плохой запрос!"
+
+#: templates/errors/400.html:20
+msgid ""
+"You made an invalid or corrupted request and the server cannot understand it."
+msgstr ""
+"Вы сделали неверный или поврежденный запрос, и сервер не может его понять."
+
+#: templates/errors/400.html:21 templates/errors/403.html:21
+#: templates/errors/404.html:21 templates/errors/500.html:21
+msgid "Get in touch with the site owner."
+msgstr "Свяжитесь с владельцем сайта."
+
+#: templates/errors/400.html:24 templates/errors/403.html:24
+#: templates/errors/404.html:24 templates/errors/500.html:24
+msgid "Go Home"
+msgstr "Иди на главную"
+
+#: templates/errors/400.html:25 templates/errors/403.html:25
+#: templates/errors/404.html:25 templates/errors/500.html:25
+#: templates/main/about.html:67 templates/main/index.html:166
+msgid "Contact me"
+msgstr "Связаться со мной"
+
+#: templates/errors/403.html:17
+msgid "Forbidden!"
+msgstr "Запрещено!"
+
+#: templates/errors/403.html:20
+msgid ""
+"Accessing the page or resource you were trying to reach is absolutely "
+"forbidden for some reason."
+msgstr ""
+"Доступ к странице или ресурсу, на который вы пытались попасть, по какой-то "
+"причине категорически запрещен."
+
+#: templates/errors/404.html:17
+msgid "Page not found!"
+msgstr "Страница не найдена!"
+
+#: templates/errors/404.html:20
+msgid "Are you sure the website URL is correct?"
+msgstr "Вы уверены, что URL-адрес веб-сайта правильный?"
+
+#: templates/errors/500.html:17
+msgid "Internal Server Error!"
+msgstr "Внутренняя ошибка сервера!"
+
+#: templates/errors/500.html:20
+msgid ""
+"Server encountered an unexpected condition that prevented it from fulfilling "
+"the request."
+msgstr ""
+"Сервер обнаружил непредвиденное условие, которое помешало ему выполнить "
+"запрос."
+
+#: templates/main/about.html:49
+msgid "Age"
+msgstr "Возраст"
+
+#: templates/main/about.html:49
+msgid "years old"
+msgstr "лет"
+
+#: templates/main/base.html:26
+msgid "Loading..."
+msgstr "Загрузка..."
+
+#: templates/main/base.html:53 templates/main/base.html:95
+#: templates/portfolio/portfolio.html:7 templates/portfolio/portfolio.html:27
+msgid "Portfolio"
+msgstr "Портфолио"
+
+#: templates/main/experience.html:65 templates/main/index.html:121
+msgid "My works"
+msgstr "Мои работы"
+
+#: templates/main/index.html:23
+msgid "Hi, I am"
+msgstr "Привет, я"
+
+#: templates/main/index.html:35
+msgid "Web Developer (Python/Django)"
+msgstr "Веб-разработчик (Python/Django)"
+
+#: templates/main/index.html:37
+msgid "About me"
+msgstr "Обо мне"
+
+#: templates/main/index.html:52
+msgid "Quality Work"
+msgstr "Качественная работа"
+
+#: templates/main/index.html:53
+msgid ""
+"My perfectionism makes me write quality code, paying attention to the little "
+"things."
+msgstr ""
+"Мой перфекционизм заставляет меня писать качественный код, уделяя внимание "
+"мелочам."
+
+#: templates/main/index.html:61
+msgid "Effective Communication"
+msgstr "Эффективная коммуникация"
+
+#: templates/main/index.html:62
+msgid "Openness, honesty and friendliness help me communicate at a high level."
+msgstr ""
+"Открытость, честность и доброжелательность помогают мне общаться на высоком "
+"уровне."
+
+#: templates/main/index.html:70
+msgid "Development speed"
+msgstr "Скорость разработки"
+
+#: templates/main/index.html:71
+msgid ""
+"Thanks to modern tools, as well as my experience, the work is done quite "
+"quickly."
+msgstr ""
+"Благодаря современным инструментам, а также моему опыту, работа выполняется "
+"довольно быстро."
+
+#: templates/main/index.html:83
+msgid "What I do best"
+msgstr "Что я делаю лучше всего"
+
+#: templates/main/index.html:87
+msgid "Building dynamic websites and web applications with latest technologies"
+msgstr ""
+"Создание динамических веб-сайтов и веб-приложений с использованием новейших "
+"технологий"
+
+#: templates/main/index.html:91
+msgid "Front-end and Back-end development"
+msgstr "Front-end и Back-end разработка"
+
+#: templates/main/index.html:95
+msgid "Converting design mockups into responsive HTML based websites"
+msgstr "Преобразование макетов дизайна в адаптивные веб-сайты на основе HTML"
+
+#: templates/main/index.html:98
+msgid "Tools and technologies"
+msgstr "Инструменты и технологии"
+
+#: templates/main/index.html:105
+msgid "My experience"
+msgstr "Мой опыт"
+
+#: templates/main/index.html:122
+msgid ""
+"In my practice there is a blog for DJs, a portal covering restaurant and "
+"club life, an online store, a social network of wedding photographers."
+msgstr ""
+"В моей практике есть блог для ди-джеев, портал о ресторанной и клубной "
+"жизни, интернет-магазин, социальная сеть свадебных фотографов."
+
+#: templates/main/index.html:124
+msgid "View Portfolio"
+msgstr "Посмотреть портфолио"
+
+#: templates/main/index.html:140
+msgid "My Contacts"
+msgstr "Мои контакты"
+
+#: templates/main/index.html:185
+msgid "Friendly Interface"
+msgstr "Дружественный интерфейс"
+
+#: templates/main/index.html:186
+msgid "Clean, modern design focused on website performance and usability."
+msgstr ""
+"Чистый, современный дизайн, ориентированный на производительность и удобство "
+"использования веб-сайта."
+
+#: templates/main/index.html:196
+msgid "Latest Technologies"
+msgstr "Новейшие технологии"
+
+#: templates/main/index.html:197
+msgid "The websites are based on the popular Django and Bootstrap frameworks."
+msgstr "Веб-сайты основаны на популярных фреймворках Django и Bootstrap."
+
+#: templates/main/index.html:207
+msgid "Advanced Options"
+msgstr "Расширенные опции"
+
+#: templates/main/index.html:208
+msgid ""
+"Multifunctional websites with extensive capabilities and complex "
+"architecture."
+msgstr ""
+"Многофункциональные сайты с широкими возможностями и сложной архитектурой."
+
+#: templates/main/index.html:220
+msgid "Modern Databases"
+msgstr "Современные базы данных"
+
+#: templates/main/index.html:221
+msgid ""
+"PostgreSQL and Redis databases provide high performance, reliability and "
+"speed of operation."
+msgstr ""
+"Базы данных PostgreSQL и Redis обеспечивают высокую производительность, "
+"надежность и скорость работы."
+
+#: templates/portfolio/portfolio.html:41
+msgid "No projects yet."
+msgstr "Пока нет проектов."
+
+#: templates/portfolio/project_detail.html:31
+#: templates/portfolio/project_detail.html:33
+msgid "Slide"
+msgstr "Слайд"
+
+#: templates/portfolio/project_detail.html:48
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: templates/portfolio/project_detail.html:52
+msgid "Next"
+msgstr "Следующий"
+
+#: templates/portfolio/project_detail.html:70
+msgid "View Site"
+msgstr "Посмотреть сайт"
+
+#: templates/portfolio/project_detail.html:72
+msgid "View Code"
+msgstr "Просмотреть код"
+
+#~ msgid "Email address"
+#~ msgstr "Адрес электронной почты"
+
+#~ msgid "January"
+#~ msgstr "Январь"
+
+#~ msgid "February"
+#~ msgstr "Февраль"
+
+#~ msgid "March"
+#~ msgstr "Март"
+
+#~ msgid "April"
+#~ msgstr "Апрель"
+
+#~ msgid "May"
+#~ msgstr "Май"
+
+#~ msgid "June"
+#~ msgstr "Июнь"
+
+#~ msgid "July"
+#~ msgstr "Июль"
+
+#~ msgid "August"
+#~ msgstr "Август"
+
+#~ msgid "September"
+#~ msgstr "Сентябрь"
+
+#~ msgid "October"
+#~ msgstr "Октябрь"
+
+#~ msgid "November"
+#~ msgstr "Ноябрь"
+
+#~ msgid "December"
+#~ msgstr "Декабрь"
+
+#~ msgid "jan"
+#~ msgstr "ян"
+
+#~ msgid "feb"
+#~ msgstr "фев"
+
+#~ msgid "mar"
+#~ msgstr "мар"
+
+#~ msgid "apr"
+#~ msgstr "апр"
+
+#~ msgid "may"
+#~ msgstr "мая"
+
+#~ msgid "jun"
+#~ msgstr "июн"
+
+#~ msgid "jul"
+#~ msgstr "июл"
+
+#~ msgid "aug"
+#~ msgstr "авг"
+
+#~ msgid "sep"
+#~ msgstr "сен"
+
+#~ msgid "oct"
+#~ msgstr "окт"
+
+#~ msgid "nov"
+#~ msgstr "ноя"
+
+#~ msgid "dec"
+#~ msgstr "дек"
+
+#~ msgctxt "alt. month"
+#~ msgid "January"
+#~ msgstr "января"
+
+#~ msgctxt "alt. month"
+#~ msgid "February"
+#~ msgstr "февраля"
+
+#~ msgctxt "alt. month"
+#~ msgid "March"
+#~ msgstr "марта"
+
+#~ msgctxt "alt. month"
+#~ msgid "April"
+#~ msgstr "апреля"
+
+#~ msgctxt "alt. month"
+#~ msgid "May"
+#~ msgstr "мая"
+
+#~ msgctxt "alt. month"
+#~ msgid "June"
+#~ msgstr "июня"
+
+#~ msgctxt "alt. month"
+#~ msgid "July"
+#~ msgstr "июля"
+
+#~ msgctxt "alt. month"
+#~ msgid "August"
+#~ msgstr "августа"
+
+#~ msgctxt "alt. month"
+#~ msgid "September"
+#~ msgstr "сентября"
+
+#~ msgctxt "alt. month"
+#~ msgid "October"
+#~ msgstr "октября"
+
+#~ msgctxt "alt. month"
+#~ msgid "November"
+#~ msgstr "ноября"
+
+#~ msgctxt "alt. month"
+#~ msgid "December"
+#~ msgstr "декабря"

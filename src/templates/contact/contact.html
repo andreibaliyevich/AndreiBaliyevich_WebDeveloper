@@ -1,0 +1,139 @@
+{% extends 'main/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}{% translate 'Contact' %}{% endblock title %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+{% endblock stylesheet %}
+
+
+{% block nav_contact %} active" aria-current="page{% endblock nav_contact %}
+
+
+{% block content %}
+
+<section class="position-relative bg-gradient" style="height: 590px;">
+  <div class="shape" style="padding-bottom: 8.7%;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 260">
+      <polygon fill="currentColor" points="0,0 0,260 3000,260 3000,257"></polygon>
+    </svg>
+  </div>
+</section>
+
+<section class="container position-relative px-md-5" style="margin-top: -590px; z-index: 5; padding-top: 7rem;">
+  <h1 class="display-3 fw-normal text-light text-center">{% translate 'Contact' %}</h1>
+
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+  <div class="alert alert-success d-flex align-items-center alert-dismissible fade show mt-5" role="alert">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+    </svg>
+    <div class="ms-2">{{ message }}</div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% translate 'Close' %}"></button>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+
+  <div class="row align-items-center py-5 g-md-5">
+    <div class="col-lg-6 mb-5">
+      <p class="lead fs-3 text-center text-lg-start">{% translate 'You can send me a message and I will get back to you as soon as I can.' %}</p>
+      <ul class="lead fs-4 my-5" style="list-style-type: none;">
+        <li class="mt-4">
+          <i class="fas fa-map-marker-alt"></i>
+          <a class="link-contact text-decoration-none ps-3" href="#map">
+            {% if LANGUAGE_CODE == 'en' %}
+            {{ ABUSER.address }}
+            {% else %}
+            {% for abuser_translation in ABUSER.abusertranslation_set.all %}
+            {% if abuser_translation.language == LANGUAGE_CODE %}
+            {{ abuser_translation.address }}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+          </a>
+        </li>
+        <li class="mt-4">
+          <i class="fas fa-envelope"></i>
+          <a class="link-contact text-decoration-none ps-3" href="mailto:{{ ABUSER.email }}" target="_blank">{{ ABUSER.email }}</a>
+        </li>
+        <li class="mt-4">
+          <i class="fas fa-phone"></i>
+          <a class="link-contact text-decoration-none ps-3" href="tel:{{ ABUSER.phone }}">{{ ABUSER.phone }}</a>
+        </li>
+      </ul>
+      <div class="text-center text-lg-start">
+        {% for social_link in ABUSER.sociallink_set.all %}
+        <a href="{{ social_link.link_url }}" target="_blank" class="link-contact text-decoration-none mx-1" rel="nofollow">
+          <i class="fab fa-{{ social_link.icon_name }}" style="font-size: 24px;"></i>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <form class="bg-light shadow rounded-1 p-4 p-md-5 " action="{% url 'contact:contact' %}" method="post">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+          <input type="text" name="name" maxlength="250" class="form-control" placeholder="{% translate 'Your Name' %}" title="" required="" id="id_name">
+          <label for="id_name">{% translate 'Your Name' %}</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" name="email" maxlength="254" class="form-control" placeholder="{% translate 'Your Email' %}" title="" required="" id="id_email">
+          <label for="id_email">{% translate 'Your Email' %}</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea name="content" class="form-control" placeholder="{% translate 'Your Message' %}" title="" required="" id="id_content" style="height: 100px;"></textarea>
+          <label for="id_content">{% translate 'Your Message' %}</label>
+        </div>
+        <button class="w-100 btn btn-primary btn-lg" type="submit">{% translate 'Send Message' %}</button>
+        <hr class="my-4">
+        <small class="text-muted">{% translate 'By clicking «Send Message», you agree with the storage and handling of your data by this website.' %}</small>
+      </form>
+    </div>
+  </div>
+
+  <div class="shadow-sm mb-5">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <div id="map" style="height: 450px;"></div>
+
+    <script>
+      const latitude = parseFloat("{{ ABUSER.location.y }}".replace(",","."))
+      const longitude = parseFloat("{{ ABUSER.location.x }}".replace(",","."))
+
+      var mymap = L.map('map').setView([latitude, longitude], 6);
+      var marker = L.marker([latitude, longitude]).addTo(mymap)
+        {% if LANGUAGE_CODE == 'en' %}
+        .bindPopup("{{ ABUSER.address }}")
+        {% else %}
+        {% for abuser_translation in ABUSER.abusertranslation_set.all %}
+        {% if abuser_translation.language == LANGUAGE_CODE %}
+        .bindPopup("{{ abuser_translation.address }}")
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        .openPopup();
+
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+      }).addTo(mymap);
+    </script>
+  </div>
+</section>
+
+{% endblock content %}
+
+
+{% block javascript %}{% endblock javascript %}

@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}{% translate 'Experience' %}{% endblock title %}
+
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+
+{% block nav_experience %} active" aria-current="page{% endblock nav_experience %}
+
+
+{% block content %}
+
+<section class="position-relative bg-gradient" style="height: 590px;">
+  <div class="shape" style="padding-bottom: 8.7%;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 260">
+      <polygon fill="currentColor" points="0,257 0,260 3000,260 3000,0"></polygon>
+    </svg>
+  </div>
+</section>
+
+<section class="container position-relative px-md-5" style="margin-top: -590px; z-index: 5; padding-top: 7rem;">
+  <h1 class="display-3 fw-normal text-light text-center">{% translate 'Experience' %}</h1>
+
+  <div class="row align-items-center pt-5 pb-md-5 gy-md-5">
+    <div class="col-lg-6">
+      <div class="lead bg-white rounded-1 shadow p-4 p-md-5" align="justify">
+        {% if LANGUAGE_CODE == 'en' %}
+        {{ ABUSER.experience|linebreaks }}
+        {% else %}
+        {% for abuser_translation in ABUSER.abusertranslation_set.all %}
+        {% if abuser_translation.language == LANGUAGE_CODE %}
+        {{ abuser_translation.experience|linebreaks }}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-lg-6 p-5 p-md-4">
+      {% for skill in ABUSER.skill_set.all %}
+      <span>{{ skill.name }}</span>
+      <div class="progress mb-3" style="height: 8px;">
+        <div class="progress-bar
+        {% if skill.progress >= 90 %}
+        bg-success
+        {% elif skill.progress >= 80 %}
+        bg-info
+        {% elif skill.progress >= 70 %}
+        bg-warning
+        {% elif skill.progress >= 60 %}
+        bg-primary
+        {% elif skill.progress >= 50 %}
+        bg-danger
+        {% elif skill.progress < 50 %}
+        bg-secondary
+        {% endif %}
+        " role="progressbar" style="width: {{ skill.progress }}%" aria-valuenow="{{ skill.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      {% endfor %}
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
+        <a class="btn btn-outline-primary btn-lg px-5 me-md-2" href="{% url 'portfolio:portfolio' %}">{% translate 'My works' %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+
+{% block javascript %}{% endblock javascript %}

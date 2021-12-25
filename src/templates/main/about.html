@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}{% translate 'About' %}{% endblock title %}
+
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+
+{% block nav_about %} active" aria-current="page{% endblock nav_about %}
+
+
+{% block content %}
+
+<section class="position-relative bg-gradient" style="height: 590px;">
+  <div class="shape" style="padding-bottom: 8.4%;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 250">
+      <g>
+        <path fill="currentColor" d="M3000,0v250H0v-51c572.7,34.3,1125.3,34.3,1657.8,0C2190.3,164.8,2637.7,98.4,3000,0z"></path>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="container position-relative px-md-5" style="margin-top: -590px; z-index: 5; padding-top: 7rem;">
+  <h1 class="display-3 fw-normal text-light text-center">{% translate 'About' %}</h1>
+
+  <div class="row flex-lg-row-reverse align-items-center pb-5 pt-md-5 gy-md-5">
+    <div class="col-lg-6 p-5 p-md-4">
+      <img src="{{ ABUSER.avatar.url }}" class="d-block mx-sm-auto img-fluid rounded-circle shadow" alt="Avatar" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <div class="bg-white rounded-1 shadow p-4 p-md-5">
+        <h1 class="display-5 fw-normal lh-1 mb-4">
+          {% if LANGUAGE_CODE == 'en' %}
+          {{ ABUSER.first_name }} {{ ABUSER.last_name }}
+          {% else %}
+          {% for abuser_translation in ABUSER.abusertranslation_set.all %}
+          {% if abuser_translation.language == LANGUAGE_CODE %}
+          {{ abuser_translation.first_name }} {{ abuser_translation.last_name }}
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+        </h1>
+        <p>
+          {% translate 'Age' %}: {{ ABUSER.get_age }} {% translate 'years old' %}.<br>
+          {% translate 'Date of Birth' %}: {{ ABUSER.date_of_birth }}
+        </p>
+        <div class="lead" align="justify">
+          {% if LANGUAGE_CODE == 'en' %}
+          {{ ABUSER.about|linebreaks }}
+          {% else %}
+          {% for abuser_translation in ABUSER.abusertranslation_set.all %}
+          {% if abuser_translation.language == LANGUAGE_CODE %}
+          {{ abuser_translation.about|linebreaks }}
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center px-4 mb-5">
+    <a class="btn btn-outline-primary btn-lg px-5 me-md-2" href="{% url 'contact:contact' %}">{% translate 'Contact me' %}</a>
+  </div>
+</section>
+
+{% endblock content %}
+
+
+{% block javascript %}{% endblock javascript %}

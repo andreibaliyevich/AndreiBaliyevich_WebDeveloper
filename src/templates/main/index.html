@@ -1,0 +1,232 @@
+{% extends 'main/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}{% translate 'Home' %}{% endblock title %}
+
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+
+{% block nav_home %} active" aria-current="page{% endblock nav_home %}
+
+
+{% block content %}
+
+<section class="jarallax" data-jarallax data-speed="0.2" style="background-image: url({% static 'img/home/bg.jpg' %}); min-height: 100vh; background-position: center; background-size: cover; background-repeat: no-repeat; display: flex; align-items: center;">
+  <div class="container px-4 py-5">
+    <div class="text-center">
+      <img class="d-block mx-auto rounded-circle shadow my-5" src="{{ ABUSER.avatar.url }}" alt="Avatar" width="280" height="280">
+      <h1 class="display-5 fw-normal text-white lh-1 mb-3">
+        <span class="fw-light">{% translate 'Hi, I am' %}</span>
+        {% if LANGUAGE_CODE == 'en' %}
+        {{ ABUSER.first_name }}
+        {% else %}
+        {% for abuser_translation in ABUSER.abusertranslation_set.all %}
+        {% if abuser_translation.language == LANGUAGE_CODE %}
+        {{ abuser_translation.first_name }}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+      </h1>
+      <div class="col-lg-6 mx-auto">
+        <h2 class="mb-lg-5 mb-4 text-light text-opacity-75">{% translate 'Web Developer (Python/Django)' %}</h2>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a class="btn btn-outline-primary btn-lg px-5 me-md-2" href="{% url 'main:about' %}">{% translate 'About me' %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container px-4 py-5">
+  <div class="row row-cols-1 row-cols-lg-3 py-5 g-5">
+    <div class="col text-center">
+      <div class="feature-icon bg-primary bg-gradient">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+          <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"/>
+        </svg>
+      </div>
+      <h2 class="fw-normal lh-1">{% translate 'Quality Work' %}</h2>
+      <p class="lead">{% translate 'My perfectionism makes me write quality code, paying attention to the little things.' %}</p>
+    </div>
+    <div class="col text-center">
+      <div class="feature-icon bg-primary bg-gradient">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+          <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+        </svg>
+      </div>
+      <h2 class="fw-normal lh-1">{% translate 'Effective Communication' %}</h2>
+      <p class="lead">{% translate 'Openness, honesty and friendliness help me communicate at a high level.' %}</p>
+    </div>
+    <div class="col text-center">
+      <div class="feature-icon bg-primary bg-gradient">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-lightning" viewBox="0 0 16 16">
+          <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5zM6.374 1 4.168 8.5H7.5a.5.5 0 0 1 .478.647L6.78 13.04 11.478 7H8a.5.5 0 0 1-.474-.658L9.306 1H6.374z"/>
+        </svg>
+      </div>
+      <h2 class="fw-normal lh-1">{% translate 'Development speed' %}</h2>
+      <p class="lead">{% translate 'Thanks to modern tools, as well as my experience, the work is done quite quickly.' %}</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-secondary bg-opacity-10">
+  <div class="container px-4 py-5">
+    <div class="row align-items-center py-5 g-5">
+      <div class="col-lg-6">
+        <img src="{% static 'img/home/tools_and_technologies.png' %}" class="d-block mx-lg-auto img-fluid" alt="Web Develop" loading="lazy">
+      </div>
+      <div class="col-lg-6 lead">
+        <h1 class="display-5 fw-normal lh-1 mb-3">{% translate 'What I do best' %}</h1>
+        <ul class="list-group py-4">
+          <li class="list-group-item border-0">
+            <i class="far fa-check-circle text-success"></i>
+            <span>{% translate 'Building dynamic websites and web applications with latest technologies' %}</span>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="far fa-check-circle text-success"></i>
+            <span>{% translate 'Front-end and Back-end development' %}</span>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="far fa-check-circle text-success"></i>
+            <span>{% translate 'Converting design mockups into responsive HTML based websites' %}</span>
+          </li>
+        </ul>
+        <h4 class="h6 pt-2 mb-1">{% translate 'Tools and technologies' %}:</h4>
+        <p class="pb-1">
+          {% for skill in ABUSER.skill_set.all %}
+          {{ skill.name }}{% if not forloop.last %},{% endif %}
+          {% endfor %}
+        </p>
+        <a class="link-primary text-decoration-none" href="{% url 'main:experience' %}">
+          {% translate 'My experience' %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center py-5 g-5">
+    <div class="col-lg-6">
+      <img src="{% static 'img/home/works.png' %}" class="d-block mx-lg-auto img-fluid" alt="My works" loading="lazy">
+    </div>
+    <div class="col-lg-6 lead">
+      <h1 class="display-5 fw-normal lh-1 mb-3">{% translate 'My works' %}</h1>
+      <p class="py-4">{% translate 'In my practice there is a blog for DJs, a portal covering restaurant and club life, an online store, a social network of wedding photographers.' %}</p>
+      <a class="link-primary text-decoration-none" href="{% url 'portfolio:portfolio' %}">
+        {% translate 'View Portfolio' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-secondary bg-opacity-10">
+  <div class="container px-4 py-5">
+    <div class="row align-items-center py-5 g-5">
+      <div class="col-lg-6">
+        <img src="{% static 'img/home/contacts.png' %}" class="d-block mx-lg-auto img-fluid" alt="Contact" loading="lazy">
+      </div>
+      <div class="col-lg-6 lead">
+        <h1 class="display-5 fw-normal lh-1 mb-3">{% translate 'My Contacts' %}</h1>
+        <ul class="py-4" style="list-style-type: none;">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <a class="link-contact text-decoration-none ps-3" href="{% url 'contact:contact' %}#map">
+              {% if LANGUAGE_CODE == 'en' %}
+              {{ ABUSER.address }}
+              {% else %}
+              {% for abuser_translation in ABUSER.abusertranslation_set.all %}
+              {% if abuser_translation.language == LANGUAGE_CODE %}
+              {{ abuser_translation.address }}
+              {% endif %}
+              {% endfor %}
+              {% endif %}
+            </a>
+          </li>
+          <li class="mt-4">
+            <i class="fas fa-envelope"></i>
+            <a class="link-contact text-decoration-none ps-3" href="mailto:{{ ABUSER.email }}" target="_blank">{{ ABUSER.email }}</a>
+          </li>
+          <li class="mt-4">
+            <i class="fas fa-phone"></i>
+            <a class="link-contact text-decoration-none ps-3" href="tel:{{ ABUSER.phone }}">{{ ABUSER.phone }}</a>
+          </li>
+        </ul>
+        <a class="link-primary text-decoration-none" href="{% url 'contact:contact' %}">
+          {% translate 'Contact me' %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container px-4 py-5">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+    <div class="col d-flex align-items-start">
+      <div class="text-muted">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
+          <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <h4 class="fw-bold mb-0">{% translate 'Friendly Interface' %}</h4>
+        <p class="lead mt-2">{% translate 'Clean, modern design focused on website performance and usability.' %}</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="text-muted">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+          <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <h4 class="fw-bold mb-0">{% translate 'Latest Technologies' %}</h4>
+        <p class="lead mt-2">{% translate 'The websites are based on the popular Django and Bootstrap frameworks.' %}</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="text-muted">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" class="bi bi-command" viewBox="0 0 16 16">
+          <path d="M3.5 2A1.5 1.5 0 0 1 5 3.5V5H3.5a1.5 1.5 0 1 1 0-3zM6 5V3.5A2.5 2.5 0 1 0 3.5 6H5v4H3.5A2.5 2.5 0 1 0 6 12.5V11h4v1.5a2.5 2.5 0 1 0 2.5-2.5H11V6h1.5A2.5 2.5 0 1 0 10 3.5V5H6zm4 1v4H6V6h4zm1-1V3.5A1.5 1.5 0 1 1 12.5 5H11zm0 6h1.5a1.5 1.5 0 1 1-1.5 1.5V11zm-6 0v1.5A1.5 1.5 0 1 1 3.5 11H5z"/>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <h4 class="fw-bold mb-0">{% translate 'Advanced Options' %}</h4>
+        <p class="lead mt-2">{% translate 'Multifunctional websites with extensive capabilities and complex architecture.' %}</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="text-muted">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" class="bi bi-hdd-stack" viewBox="0 0 16 16">
+          <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
+          <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+          <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <h4 class="fw-bold mb-0">{% translate 'Modern Databases' %}</h4>
+        <p class="lead mt-2">{% translate 'PostgreSQL and Redis databases provide high performance, reliability and speed of operation.' %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'js/jarallax.min.js' %}"></script>
+{% endblock javascript %}

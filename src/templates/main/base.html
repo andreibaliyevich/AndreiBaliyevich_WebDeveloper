@@ -1,0 +1,129 @@
+{% load i18n %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ SITE_NAME }}">
+  <meta name="keywords" content="{{ SITE_NAME }}, Web Developer">
+  <meta name="author" content="Andrei Baliyevich">
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+  <title>{{ SITE_NAME }} | {% block title %}{% endblock title %}</title>
+  {# STYLES #}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  {% block stylesheet %}{% endblock stylesheet %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  {# STYLES END #}
+  <script src="https://kit.fontawesome.com/0f57330fce.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  {# LOADING #}
+  <div id="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">{% translate 'Loading...' %}</span>
+    </div>
+  </div>
+  {# LOADING END #}
+
+  {# HEADER #}
+  <header class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="{% url 'main:index' %}">
+        <img src="{% static 'img/logo_navbar.png' %}" width="48" height="48" alt="Logo">
+        <span class="fs-3 ms-2">{{ SITE_NAME }}</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbar-menu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item ms-3">
+            <a class="nav-link{% block nav_home %}{% endblock nav_home %}" href="{% url 'main:index' %}">{% translate 'Home' %}</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link{% block nav_about %}{% endblock nav_about %}" href="{% url 'main:about' %}">{% translate 'About' %}</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link{% block nav_experience %}{% endblock nav_experience %}" href="{% url 'main:experience' %}">{% translate 'Experience' %}</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link{% block nav_portfolio %}{% endblock nav_portfolio %}" href="{% url 'portfolio:portfolio' %}">{% translate 'Portfolio' %}</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link{% block nav_contact %}{% endblock nav_contact %}" href="{% url 'contact:contact' %}">{% translate 'Contact' %}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  {# HEADER END #}
+
+  <main>
+    {% block content %}{% endblock content %}
+  </main>
+
+  <button id="btn-scroll-top"><i class="fas fa-arrow-up"></i></button>
+
+  {# FOOTER #}
+  <footer class="footer-dark pt-5">
+    <div class="container">
+      <div class="row pb-2">
+        <div class="col-md-6 mb-4">
+          <div class="d-flex justify-content-center justify-content-md-start mb-3">
+            <a href="{% url 'main:index' %}" class="d-flex align-items-center text-white text-decoration-none me-3">
+              <img src="{% static 'img/logo_footer.png' %}" height="32">
+              <span class="fs-4 ms-2">{{ SITE_NAME }}</span>
+            </a>
+            <div class="btn-group dropup">
+              <a href="#" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ LANGUAGE_CODE|upper }}</a>
+              <ul class="dropdown-menu">
+                {% for language in LANGUAGES %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'main:set_language' language.0 %}">{{ language.1 }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <nav class="nav justify-content-center justify-content-md-start">
+            <a class="nav-link link-footer ps-0" href="{% url 'main:index' %}">{% translate 'Home' %}</a>
+            <a class="nav-link link-footer" href="{% url 'main:about' %}">{% translate 'About' %}</a>
+            <a class="nav-link link-footer" href="{% url 'main:experience' %}">{% translate 'Experience' %}</a>
+            <a class="nav-link link-footer" href="{% url 'portfolio:portfolio' %}">{% translate 'Portfolio' %}</a>
+            <a class="nav-link link-footer" href="{% url 'contact:contact' %}">{% translate 'Contact' %}</a>
+          </nav>
+        </div>
+        <div class="col-md-6 text-center text-md-end mb-4">
+          <div class="mb-4">
+            {% for social_link in ABUSER.sociallink_set.all %}
+            <a href="{{ social_link.link_url }}" target="_blank" class="link-footer text-decoration-none mx-1" rel="nofollow">
+              <i class="fab fa-{{ social_link.icon_name }}" style="font-size: 24px;"></i>
+            </a>
+            {% endfor %}
+          </div>
+          <div class="d-flex justify-content-center justify-content-md-end">
+            <a class="d-flex justify-content-center link-footer text-decoration-none" href="mailto:{{ ABUSER.email }}" target="_blank">
+              <i class="fas fa-envelope me-2" style="font-size: 24px;"></i>
+              {{ ABUSER.email }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="text-white my-0">
+      <div class="text-center text-secondary py-3">
+        <small>Copyright &copy; 2021 {{ SITE_NAME }} • Web Developer (Python/Django)</small>
+      </div>
+    </div>
+  </footer>
+  {# FOOTER END #}
+
+  {# SCRIPTS #}
+  <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  {% block javascript %}{% endblock javascript %}
+  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  {# SCRIPTS END #}
+</body>
+</html>
