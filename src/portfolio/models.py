@@ -34,6 +34,9 @@ class Project(models.Model):
         verbose_name=_('End date'),
     )
 
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return reverse('portfolio:project_detail', args=[self.slug])
 
