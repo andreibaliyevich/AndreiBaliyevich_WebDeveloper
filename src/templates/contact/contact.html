@@ -78,7 +78,7 @@
       </div>
     </div>
     <div class="col-lg-6">
-      <form class="bg-light shadow rounded-1 p-4 p-md-5 " action="{% url 'contact:contact' %}" method="post">
+      <form class="bg-light shadow rounded-1 p-4 p-md-5" action="{% url 'contact:contact' %}" method="post">
         {% csrf_token %}
         <div class="form-floating mb-3">
           <input type="text" name="name" maxlength="250" class="form-control" placeholder="{% translate 'Your Name' %}" title="" required="" id="id_name">
