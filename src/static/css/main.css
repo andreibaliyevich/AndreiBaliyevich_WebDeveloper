@@ -137,12 +137,3 @@
   left: 0;
   bottom: 0;
 }
-
-#carouselProjectImage:hover .carousel-control-prev {
-  background: rgb(0,0,0);
-  background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%);
-}
-#carouselProjectImage:hover .carousel-control-next {
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%);
-}
