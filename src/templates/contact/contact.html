@@ -49,15 +49,7 @@
         <li class="mt-4">
           <i class="fas fa-map-marker-alt"></i>
           <a class="link-contact text-decoration-none ps-3" href="#map">
-            {% if LANGUAGE_CODE == 'en' %}
-            {{ ABUSER.address }}
-            {% else %}
-            {% for abuser_translation in ABUSER.abusertranslation_set.all %}
-            {% if abuser_translation.language == LANGUAGE_CODE %}
-            {{ abuser_translation.address }}
-            {% endif %}
-            {% endfor %}
-            {% endif %}
+            {{ ABUSER.get_address }}
           </a>
         </li>
         <li class="mt-4">
@@ -119,15 +111,7 @@
 
       var mymap = L.map('map').setView([latitude, longitude], 6);
       var marker = L.marker([latitude, longitude]).addTo(mymap)
-        {% if LANGUAGE_CODE == 'en' %}
-        .bindPopup("{{ ABUSER.address }}")
-        {% else %}
-        {% for abuser_translation in ABUSER.abusertranslation_set.all %}
-        {% if abuser_translation.language == LANGUAGE_CODE %}
-        .bindPopup("{{ abuser_translation.address }}")
-        {% endif %}
-        {% endfor %}
-        {% endif %}
+        .bindPopup("{{ ABUSER.get_address }}")
         .openPopup();
 
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {

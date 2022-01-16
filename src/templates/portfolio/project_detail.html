@@ -46,15 +46,7 @@
     </div>
 
     <div class="col-lg-8 mx-auto lead mb-4 py-3" align="justify">
-      {% if LANGUAGE_CODE == 'en' %}
-      {{ object.description|linebreaks }}
-      {% else %}
-      {% for object_translation in object.projecttranslation_set.all %}
-      {% if object_translation.language == LANGUAGE_CODE %}
-      {{ object_translation.description|linebreaks }}
-      {% endif %}
-      {% endfor %}
-      {% endif %}
+      {{ object.get_description|linebreaks }}
     </div>
 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">

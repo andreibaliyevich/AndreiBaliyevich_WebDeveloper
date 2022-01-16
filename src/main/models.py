@@ -5,6 +5,7 @@ from django.contrib.gis.db import models
 from django.contrib.gis.geos import Point
 from django.core.validators import MaxValueValidator, RegexValidator
 from django.utils import timezone
+from django.utils import translation
 from django.utils.translation import gettext_lazy as _
 from .managers import ABUserManager
 from .utilities import get_user_avatar_path
@@ -90,8 +91,50 @@ class ABUser(AbstractBaseUser, PermissionsMixin):
 
     objects = ABUserManager()
 
-    def __str__(self):
-        return self.email
+    def get_first_name(self):
+        language_code = translation.get_language()
+        if language_code == 'en':
+            return self.first_name
+        else:
+            for object_translation in self.abusertranslation_set.all():
+                if object_translation.language == language_code:
+                    return object_translation.first_name
+
+    def get_last_name(self):
+        language_code = translation.get_language()
+        if language_code == 'en':
+            return self.last_name
+        else:
+            for object_translation in self.abusertranslation_set.all():
+                if object_translation.language == language_code:
+                    return object_translation.last_name
+
+    def get_address(self):
+        language_code = translation.get_language()
+        if language_code == 'en':
+            return self.address
+        else:
+            for object_translation in self.abusertranslation_set.all():
+                if object_translation.language == language_code:
+                    return object_translation.address
+
+    def get_about(self):
+        language_code = translation.get_language()
+        if language_code == 'en':
+            return self.about
+        else:
+            for object_translation in self.abusertranslation_set.all():
+                if object_translation.language == language_code:
+                    return object_translation.about
+
+    def get_experience(self):
+        language_code = translation.get_language()
+        if language_code == 'en':
+            return self.experience
+        else:
+            for object_translation in self.abusertranslation_set.all():
+                if object_translation.language == language_code:
+                    return object_translation.experience
 
     def get_age(self):
         return (
@@ -100,6 +143,9 @@ class ABUser(AbstractBaseUser, PermissionsMixin):
             - int(
                 (timezone.now().month, timezone.now().day) < (
                     self.date_of_birth.month, self.date_of_birth.day)))
+
+    def __str__(self):
+        return self.email
 
     class Meta:
         verbose_name = _('User')

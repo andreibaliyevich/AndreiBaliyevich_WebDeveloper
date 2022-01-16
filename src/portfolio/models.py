@@ -2,6 +2,7 @@ from easy_thumbnails.fields import ThumbnailerImageField
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
+from django.utils import translation
 from django.utils.translation import gettext_lazy as _
 from .utilities import get_cover_path, get_thumbnail_path, get_image_path
 
@@ -34,11 +35,20 @@ class Project(models.Model):
         verbose_name=_('End date'),
     )
 
-    def __str__(self):
-        return self.name
+    def get_description(self):
+        language_code = translation.get_language()
+        if language_code == 'en':
+            return self.description
+        else:
+            for object_translation in self.projecttranslation_set.all():
+                if object_translation.language == language_code:
+                    return object_translation.description
 
     def get_absolute_url(self):
         return reverse('portfolio:project_detail', args=[self.slug])
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = _('Project')

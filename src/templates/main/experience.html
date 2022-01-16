@@ -29,15 +29,7 @@
   <div class="row align-items-center pt-5 pb-md-5 gy-md-5">
     <div class="col-lg-6">
       <div class="lead bg-white rounded-1 shadow p-4 p-md-5" align="justify">
-        {% if LANGUAGE_CODE == 'en' %}
-        {{ ABUSER.experience|linebreaks }}
-        {% else %}
-        {% for abuser_translation in ABUSER.abusertranslation_set.all %}
-        {% if abuser_translation.language == LANGUAGE_CODE %}
-        {{ abuser_translation.experience|linebreaks }}
-        {% endif %}
-        {% endfor %}
-        {% endif %}
+        {{ ABUSER.get_experience|linebreaks }}
       </div>
     </div>
     <div class="col-lg-6 p-5 p-md-4">

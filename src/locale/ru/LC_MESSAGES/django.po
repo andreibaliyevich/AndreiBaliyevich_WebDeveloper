@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-11 16:07+0000\n"
+"POT-Creation-Date: 2022-01-16 09:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,13 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: contact/models.py:7 main/models.py:172 portfolio/models.py:11
+#: contact/models.py:7 main/models.py:218 portfolio/models.py:12
 #: templates/email/contact_to_email.html:5
 #: templates/email/contact_to_email_text.html:4
 msgid "Name"
 msgstr "Имя"
 
-#: contact/models.py:8 main/models.py:15
+#: contact/models.py:8 main/models.py:16
 #: templates/email/contact_to_email.html:6
 #: templates/email/contact_to_email_text.html:5
 msgid "Email"
@@ -78,179 +78,179 @@ msgstr "У суперпользователя должно быть is_staff=Tru
 msgid "Superuser must have is_superuser=True."
 msgstr "У суперпользователя должно быть is_superuser=True."
 
-#: main/models.py:20 main/models.py:123
+#: main/models.py:21 main/models.py:169
 msgid "First name"
 msgstr "Имя"
 
-#: main/models.py:25 main/models.py:124
+#: main/models.py:26 main/models.py:170
 msgid "Last name"
 msgstr "Фамилия"
 
-#: main/models.py:37
+#: main/models.py:38
 msgid "Avatar"
 msgstr "Аватар"
 
-#: main/models.py:45
+#: main/models.py:46
 msgid "Wrong format!"
 msgstr "Неправильный формат!"
 
-#: main/models.py:48
+#: main/models.py:49
 msgid "Phone"
 msgstr "Телефон"
 
-#: main/models.py:53 templates/main/about.html:50
+#: main/models.py:54 templates/main/about.html:42
 msgid "Date of Birth"
 msgstr "Дата рождения"
 
-#: main/models.py:59 main/models.py:126
+#: main/models.py:60 main/models.py:172
 msgid "Address"
 msgstr "Адрес"
 
-#: main/models.py:63
+#: main/models.py:64
 msgid "Location"
 msgstr "Место нахождения"
 
-#: main/models.py:66 main/models.py:128 templates/main/about.html:7
+#: main/models.py:67 main/models.py:174 templates/main/about.html:7
 #: templates/main/about.html:29 templates/main/base.html:47
 #: templates/main/base.html:93
 msgid "About"
 msgstr "Обо мне"
 
-#: main/models.py:67 main/models.py:129 templates/main/base.html:50
+#: main/models.py:68 main/models.py:175 templates/main/base.html:50
 #: templates/main/base.html:94 templates/main/experience.html:7
 #: templates/main/experience.html:27
 msgid "Experience"
 msgstr "Опыт"
 
-#: main/models.py:69
+#: main/models.py:70
 msgid "Active"
 msgstr "Активный"
 
-#: main/models.py:72
+#: main/models.py:73
 msgid "Staff status"
 msgstr "Статус персонала"
 
-#: main/models.py:76
+#: main/models.py:77
 msgid "Superuser status"
 msgstr "Статус суперпользователя"
 
-#: main/models.py:81
+#: main/models.py:82
 msgid "Last login"
 msgstr "Последний вход"
 
-#: main/models.py:85
+#: main/models.py:86
 msgid "Date joined"
 msgstr "Дата присоединения"
 
-#: main/models.py:105 main/models.py:115 main/models.py:143 main/models.py:169
+#: main/models.py:151 main/models.py:161 main/models.py:189 main/models.py:215
 msgid "User"
 msgstr "Пользователь"
 
-#: main/models.py:106
+#: main/models.py:152
 msgid "Users"
 msgstr "Пользователи"
 
-#: main/models.py:120 portfolio/models.py:56
+#: main/models.py:166 portfolio/models.py:69
 msgid "Language"
 msgstr "Язык"
 
-#: main/models.py:132
+#: main/models.py:178
 msgid "ABUser Translation"
 msgstr "ABUser перевод"
 
-#: main/models.py:133
+#: main/models.py:179
 msgid "ABUser Translations"
 msgstr "ABUser переводы"
 
-#: main/models.py:148
+#: main/models.py:194
 msgid "Name of icon"
 msgstr "Название иконки"
 
-#: main/models.py:150
+#: main/models.py:196
 msgid "URL of Link"
 msgstr "URL ссылки"
 
-#: main/models.py:154 main/models.py:182
+#: main/models.py:200 main/models.py:228
 msgid "Position"
 msgstr "Позиция"
 
-#: main/models.py:158
+#: main/models.py:204
 msgid "Social Link"
 msgstr "Социальная ссылка"
 
-#: main/models.py:159
+#: main/models.py:205
 msgid "Social Links"
 msgstr "Социальные ссылки"
 
-#: main/models.py:177
+#: main/models.py:223
 msgid "Progress"
 msgstr "Прогресс"
 
-#: main/models.py:186
+#: main/models.py:232
 msgid "Skill"
 msgstr "Навык"
 
-#: main/models.py:187
+#: main/models.py:233
 msgid "Skills"
 msgstr "Навыки"
 
-#: portfolio/models.py:12
+#: portfolio/models.py:13
 msgid "Slug"
 msgstr "Слаг"
 
-#: portfolio/models.py:14 templates/portfolio/project_detail.html:38
+#: portfolio/models.py:15 templates/portfolio/project_detail.html:38
 msgid "Cover"
 msgstr "Обложка"
 
-#: portfolio/models.py:23
+#: portfolio/models.py:24
 msgid "Thumbnail"
 msgstr "Эскиз"
 
-#: portfolio/models.py:26 portfolio/models.py:59
+#: portfolio/models.py:27 portfolio/models.py:72
 msgid "Description"
 msgstr "Описание"
 
-#: portfolio/models.py:27
+#: portfolio/models.py:28
 msgid "Code URL"
 msgstr "URL кода"
 
-#: portfolio/models.py:28
+#: portfolio/models.py:29
 msgid "Project URL"
 msgstr "URL проекта"
 
-#: portfolio/models.py:30
+#: portfolio/models.py:31
 msgid "Start date"
 msgstr "Дата начала"
 
-#: portfolio/models.py:34
+#: portfolio/models.py:35
 msgid "End date"
 msgstr "Дата окончания"
 
-#: portfolio/models.py:41 portfolio/models.py:51 portfolio/models.py:73
+#: portfolio/models.py:54 portfolio/models.py:64 portfolio/models.py:86
 msgid "Project"
 msgstr "Проект"
 
-#: portfolio/models.py:42
+#: portfolio/models.py:55
 msgid "Projects"
 msgstr "Проекты"
 
-#: portfolio/models.py:62
+#: portfolio/models.py:75
 msgid "Project Translation"
 msgstr "Перевод проекта"
 
-#: portfolio/models.py:63
+#: portfolio/models.py:76
 msgid "Project Translations"
 msgstr "Переводы проектов"
 
-#: portfolio/models.py:75 templates/portfolio/project_detail.html:42
+#: portfolio/models.py:88 templates/portfolio/project_detail.html:42
 msgid "Image"
 msgstr "Изображение"
 
-#: portfolio/models.py:78
+#: portfolio/models.py:91
 msgid "Project Image"
 msgstr "Изображение проекта"
 
-#: portfolio/models.py:79
+#: portfolio/models.py:92
 msgid "Project Images"
 msgstr "Изображения проекта"
 
@@ -301,23 +301,23 @@ msgid "You can send me a message and I will get back to you as soon as I can."
 msgstr ""
 "Вы можете отправить мне сообщение, и я свяжусь с вами, как только смогу."
 
-#: templates/contact/contact.html:84 templates/contact/contact.html:85
+#: templates/contact/contact.html:76 templates/contact/contact.html:77
 msgid "Your Name"
 msgstr "Ваше имя"
 
-#: templates/contact/contact.html:88 templates/contact/contact.html:89
+#: templates/contact/contact.html:83 templates/contact/contact.html:84
 msgid "Your Email"
 msgstr "Ваш эл. адрес"
 
-#: templates/contact/contact.html:92 templates/contact/contact.html:93
+#: templates/contact/contact.html:90 templates/contact/contact.html:91
 msgid "Your Message"
 msgstr "Ваше сообщение"
 
-#: templates/contact/contact.html:95
+#: templates/contact/contact.html:96
 msgid "Send Message"
 msgstr "Отправить сообщение"
 
-#: templates/contact/contact.html:97
+#: templates/contact/contact.html:98
 msgid ""
 "By clicking «Send Message», you agree with the storage and handling of your "
 "data by this website."
@@ -361,7 +361,7 @@ msgstr "Иди на главную"
 
 #: templates/errors/400.html:25 templates/errors/403.html:25
 #: templates/errors/404.html:25 templates/errors/500.html:25
-#: templates/main/about.html:67 templates/main/index.html:166
+#: templates/main/about.html:51 templates/main/index.html:150
 msgid "Contact me"
 msgstr "Связаться со мной"
 
@@ -397,11 +397,11 @@ msgstr ""
 "Сервер обнаружил непредвиденное условие, которое помешало ему выполнить "
 "запрос."
 
-#: templates/main/about.html:49
+#: templates/main/about.html:41
 msgid "Age"
 msgstr "Возраст"
 
-#: templates/main/about.html:49
+#: templates/main/about.html:41
 msgid "years old"
 msgstr "лет"
 
@@ -414,7 +414,7 @@ msgstr "Загрузка..."
 msgid "Portfolio"
 msgstr "Портфолио"
 
-#: templates/main/experience.html:65 templates/main/index.html:121
+#: templates/main/experience.html:57 templates/main/index.html:113
 msgid "My works"
 msgstr "Мои работы"
 
@@ -422,19 +422,19 @@ msgstr "Мои работы"
 msgid "Hi, I am"
 msgstr "Привет, я"
 
-#: templates/main/index.html:35
+#: templates/main/index.html:27
 msgid "Web Developer (Python/Django)"
 msgstr "Веб-разработчик (Python/Django)"
 
-#: templates/main/index.html:37
+#: templates/main/index.html:29
 msgid "About me"
 msgstr "Обо мне"
 
-#: templates/main/index.html:52
+#: templates/main/index.html:44
 msgid "Quality Work"
 msgstr "Качественная работа"
 
-#: templates/main/index.html:53
+#: templates/main/index.html:45
 msgid ""
 "My perfectionism makes me write quality code, paying attention to the little "
 "things."
@@ -442,21 +442,21 @@ msgstr ""
 "Мой перфекционизм заставляет меня писать качественный код, уделяя внимание "
 "мелочам."
 
-#: templates/main/index.html:61
+#: templates/main/index.html:53
 msgid "Effective Communication"
 msgstr "Эффективная коммуникация"
 
-#: templates/main/index.html:62
+#: templates/main/index.html:54
 msgid "Openness, honesty and friendliness help me communicate at a high level."
 msgstr ""
 "Открытость, честность и доброжелательность помогают мне общаться на высоком "
 "уровне."
 
-#: templates/main/index.html:70
+#: templates/main/index.html:62
 msgid "Development speed"
 msgstr "Скорость разработки"
 
-#: templates/main/index.html:71
+#: templates/main/index.html:63
 msgid ""
 "Thanks to modern tools, as well as my experience, the work is done quite "
 "quickly."
@@ -464,33 +464,33 @@ msgstr ""
 "Благодаря современным инструментам, а также моему опыту, работа выполняется "
 "довольно быстро."
 
-#: templates/main/index.html:83
+#: templates/main/index.html:75
 msgid "What I do best"
 msgstr "Что я делаю лучше всего"
 
-#: templates/main/index.html:87
+#: templates/main/index.html:79
 msgid "Building dynamic websites and web applications with latest technologies"
 msgstr ""
 "Создание динамических веб-сайтов и веб-приложений с использованием новейших "
 "технологий"
 
-#: templates/main/index.html:91
+#: templates/main/index.html:83
 msgid "Front-end and Back-end development"
 msgstr "Front-end и Back-end разработка"
 
-#: templates/main/index.html:95
+#: templates/main/index.html:87
 msgid "Converting design mockups into responsive HTML based websites"
 msgstr "Преобразование макетов дизайна в адаптивные веб-сайты на основе HTML"
 
-#: templates/main/index.html:98
+#: templates/main/index.html:90
 msgid "Tools and technologies"
 msgstr "Инструменты и технологии"
 
-#: templates/main/index.html:105
+#: templates/main/index.html:97
 msgid "My experience"
 msgstr "Мой опыт"
 
-#: templates/main/index.html:122
+#: templates/main/index.html:114
 msgid ""
 "In my practice there is a blog for DJs, a portal covering restaurant and "
 "club life, an online store, a social network of wedding photographers."
@@ -498,48 +498,48 @@ msgstr ""
 "В моей практике есть блог для ди-джеев, портал о ресторанной и клубной "
 "жизни, интернет-магазин, социальная сеть свадебных фотографов."
 
-#: templates/main/index.html:124
+#: templates/main/index.html:116
 msgid "View Portfolio"
 msgstr "Посмотреть портфолио"
 
-#: templates/main/index.html:140
+#: templates/main/index.html:132
 msgid "My Contacts"
 msgstr "Мои контакты"
 
-#: templates/main/index.html:185
+#: templates/main/index.html:169
 msgid "Friendly Interface"
 msgstr "Дружественный интерфейс"
 
-#: templates/main/index.html:186
+#: templates/main/index.html:170
 msgid "Clean, modern design focused on website performance and usability."
 msgstr ""
 "Чистый, современный дизайн, ориентированный на производительность и удобство "
 "использования веб-сайта."
 
-#: templates/main/index.html:196
+#: templates/main/index.html:180
 msgid "Latest Technologies"
 msgstr "Новейшие технологии"
 
-#: templates/main/index.html:197
+#: templates/main/index.html:181
 msgid "The websites are based on the popular Django and Bootstrap frameworks."
 msgstr "Веб-сайты основаны на популярных фреймворках Django и Bootstrap."
 
-#: templates/main/index.html:207
+#: templates/main/index.html:191
 msgid "Advanced Options"
 msgstr "Расширенные опции"
 
-#: templates/main/index.html:208
+#: templates/main/index.html:192
 msgid ""
 "Multifunctional websites with extensive capabilities and complex "
 "architecture."
 msgstr ""
 "Многофункциональные сайты с широкими возможностями и сложной архитектурой."
 
-#: templates/main/index.html:220
+#: templates/main/index.html:204
 msgid "Modern Databases"
 msgstr "Современные базы данных"
 
-#: templates/main/index.html:221
+#: templates/main/index.html:205
 msgid ""
 "PostgreSQL and Redis databases provide high performance, reliability and "
 "speed of operation."
@@ -556,141 +556,10 @@ msgstr "Пока нет проектов."
 msgid "Slide"
 msgstr "Слайд"
 
-#: templates/portfolio/project_detail.html:48
-msgid "Previous"
-msgstr "Предыдущий"
-
-#: templates/portfolio/project_detail.html:52
-msgid "Next"
-msgstr "Следующий"
-
-#: templates/portfolio/project_detail.html:70
+#: templates/portfolio/project_detail.html:54
 msgid "View Site"
 msgstr "Посмотреть сайт"
 
-#: templates/portfolio/project_detail.html:72
+#: templates/portfolio/project_detail.html:56
 msgid "View Code"
 msgstr "Просмотреть код"
-
-#~ msgid "Email address"
-#~ msgstr "Адрес электронной почты"
-
-#~ msgid "January"
-#~ msgstr "Январь"
-
-#~ msgid "February"
-#~ msgstr "Февраль"
-
-#~ msgid "March"
-#~ msgstr "Март"
-
-#~ msgid "April"
-#~ msgstr "Апрель"
-
-#~ msgid "May"
-#~ msgstr "Май"
-
-#~ msgid "June"
-#~ msgstr "Июнь"
-
-#~ msgid "July"
-#~ msgstr "Июль"
-
-#~ msgid "August"
-#~ msgstr "Август"
-
-#~ msgid "September"
-#~ msgstr "Сентябрь"
-
-#~ msgid "October"
-#~ msgstr "Октябрь"
-
-#~ msgid "November"
-#~ msgstr "Ноябрь"
-
-#~ msgid "December"
-#~ msgstr "Декабрь"
-
-#~ msgid "jan"
-#~ msgstr "ян"
-
-#~ msgid "feb"
-#~ msgstr "фев"
-
-#~ msgid "mar"
-#~ msgstr "мар"
-
-#~ msgid "apr"
-#~ msgstr "апр"
-
-#~ msgid "may"
-#~ msgstr "мая"
-
-#~ msgid "jun"
-#~ msgstr "июн"
-
-#~ msgid "jul"
-#~ msgstr "июл"
-
-#~ msgid "aug"
-#~ msgstr "авг"
-
-#~ msgid "sep"
-#~ msgstr "сен"
-
-#~ msgid "oct"
-#~ msgstr "окт"
-
-#~ msgid "nov"
-#~ msgstr "ноя"
-
-#~ msgid "dec"
-#~ msgstr "дек"
-
-#~ msgctxt "alt. month"
-#~ msgid "January"
-#~ msgstr "января"
-
-#~ msgctxt "alt. month"
-#~ msgid "February"
-#~ msgstr "февраля"
-
-#~ msgctxt "alt. month"
-#~ msgid "March"
-#~ msgstr "марта"
-
-#~ msgctxt "alt. month"
-#~ msgid "April"
-#~ msgstr "апреля"
-
-#~ msgctxt "alt. month"
-#~ msgid "May"
-#~ msgstr "мая"
-
-#~ msgctxt "alt. month"
-#~ msgid "June"
-#~ msgstr "июня"
-
-#~ msgctxt "alt. month"
-#~ msgid "July"
-#~ msgstr "июля"
-
-#~ msgctxt "alt. month"
-#~ msgid "August"
-#~ msgstr "августа"
-
-#~ msgctxt "alt. month"
-#~ msgid "September"
-#~ msgstr "сентября"
-
-#~ msgctxt "alt. month"
-#~ msgid "October"
-#~ msgstr "октября"
-
-#~ msgctxt "alt. month"
-#~ msgid "November"
-#~ msgstr "ноября"
-
-#~ msgctxt "alt. month"
-#~ msgid "December"
-#~ msgstr "декабря"
