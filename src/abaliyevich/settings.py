@@ -143,7 +143,7 @@ EMAIL_HOST_RECEIVER = os.environ.get('EMAIL_HOST_RECEIVER')
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('en', 'English'),
