@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils import translation
 from django.utils.translation import gettext_lazy as _
+from main.model_fields import TranslatedField
 from .utilities import get_cover_path, get_thumbnail_path, get_image_path
 
 
@@ -25,6 +26,8 @@ class Project(models.Model):
     )
 
     description = models.TextField(verbose_name=_('Description'))
+    translated_description = TranslatedField('description')
+
     code_url = models.URLField(verbose_name=_('Code URL'))
     project_url = models.URLField(blank=True, verbose_name=_('Project URL'))
 
@@ -34,15 +37,6 @@ class Project(models.Model):
         null=True,
         verbose_name=_('End date'),
     )
-
-    def get_description(self):
-        language_code = translation.get_language()
-        if language_code == 'en':
-            return self.description
-        else:
-            for object_translation in self.projecttranslation_set.all():
-                if object_translation.language == language_code:
-                    return object_translation.description
 
     def get_absolute_url(self):
         return reverse('portfolio:project_detail', args=[self.slug])
@@ -61,6 +55,7 @@ class ProjectTranslation(models.Model):
     project = models.ForeignKey(
         Project,
         on_delete=models.CASCADE,
+        related_name='translations',
         verbose_name=_('Project'),
     )
     language = models.CharField(

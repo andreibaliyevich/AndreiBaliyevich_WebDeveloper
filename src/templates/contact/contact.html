@@ -49,7 +49,7 @@
         <li class="mt-4">
           <i class="fas fa-map-marker-alt"></i>
           <a class="link-contact text-decoration-none ps-3" href="#map">
-            {{ ABUSER.get_address }}
+            {{ ABUSER.translated_address }}
           </a>
         </li>
         <li class="mt-4">
@@ -111,7 +111,7 @@
 
       var mymap = L.map('map').setView([latitude, longitude], 6);
       var marker = L.marker([latitude, longitude]).addTo(mymap)
-        .bindPopup("{{ ABUSER.get_address }}")
+        .bindPopup("{{ ABUSER.translated_address }}")
         .openPopup();
 
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {

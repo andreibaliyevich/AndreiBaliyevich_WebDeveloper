@@ -21,7 +21,7 @@
       <img class="d-block mx-auto rounded-circle shadow my-5" src="{{ ABUSER.avatar.url }}" alt="Avatar" width="280" height="280">
       <h1 class="display-5 fw-normal text-white lh-1 mb-3">
         <span class="fw-light">{% translate 'Hi, I am' %}</span>
-        {{ ABUSER.get_first_name }}
+        {{ ABUSER.translated_first_name }}
       </h1>
       <div class="col-lg-6 mx-auto">
         <h2 class="mb-lg-5 mb-4 text-light text-opacity-75">{% translate 'Web Developer (Python/Django)' %}</h2>
@@ -134,7 +134,7 @@
           <li>
             <i class="fas fa-map-marker-alt"></i>
             <a class="link-contact text-decoration-none ps-3" href="{% url 'contact:contact' %}#map">
-              {{ ABUSER.get_address }}
+              {{ ABUSER.translated_address }}
             </a>
           </li>
           <li class="mt-4">

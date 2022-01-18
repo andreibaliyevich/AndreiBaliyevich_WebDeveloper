@@ -7,6 +7,7 @@ from django.core.validators import MaxValueValidator, RegexValidator
 from django.utils import timezone
 from django.utils import translation
 from django.utils.translation import gettext_lazy as _
+from main.model_fields import TranslatedField
 from .managers import ABUserManager
 from .utilities import get_user_avatar_path
 
@@ -25,6 +26,8 @@ class ABUser(AbstractBaseUser, PermissionsMixin):
         max_length=150,
         verbose_name=_('Last name'),
     )
+    translated_first_name = TranslatedField('first_name')
+    translated_last_name = TranslatedField('last_name')
 
     avatar = ThumbnailerImageField(
         default='avatars/default.png',
@@ -59,13 +62,17 @@ class ABUser(AbstractBaseUser, PermissionsMixin):
         max_length=255,
         verbose_name=_('Address'),
     )
+    translated_address = TranslatedField('address')
     location = models.PointField(
         default=Point(0.0, 0.0),
         verbose_name=_('Location'),
     )
 
     about = models.TextField(blank=True, verbose_name=_('About'))
+    translated_about = TranslatedField('about')
+    
     experience = models.TextField(blank=True, verbose_name=_('Experience'))
+    translated_experience = TranslatedField('experience')
 
     is_active = models.BooleanField(default=False, verbose_name=_('Active'))
     is_staff = models.BooleanField(
@@ -91,51 +98,6 @@ class ABUser(AbstractBaseUser, PermissionsMixin):
 
     objects = ABUserManager()
 
-    def get_first_name(self):
-        language_code = translation.get_language()
-        if language_code == 'en':
-            return self.first_name
-        else:
-            for object_translation in self.abusertranslation_set.all():
-                if object_translation.language == language_code:
-                    return object_translation.first_name
-
-    def get_last_name(self):
-        language_code = translation.get_language()
-        if language_code == 'en':
-            return self.last_name
-        else:
-            for object_translation in self.abusertranslation_set.all():
-                if object_translation.language == language_code:
-                    return object_translation.last_name
-
-    def get_address(self):
-        language_code = translation.get_language()
-        if language_code == 'en':
-            return self.address
-        else:
-            for object_translation in self.abusertranslation_set.all():
-                if object_translation.language == language_code:
-                    return object_translation.address
-
-    def get_about(self):
-        language_code = translation.get_language()
-        if language_code == 'en':
-            return self.about
-        else:
-            for object_translation in self.abusertranslation_set.all():
-                if object_translation.language == language_code:
-                    return object_translation.about
-
-    def get_experience(self):
-        language_code = translation.get_language()
-        if language_code == 'en':
-            return self.experience
-        else:
-            for object_translation in self.abusertranslation_set.all():
-                if object_translation.language == language_code:
-                    return object_translation.experience
-
     def get_age(self):
         return (
             timezone.now().year
@@ -158,6 +120,7 @@ class ABUserTranslation(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
+        related_name='translations',
         verbose_name=_('User'),
     )
     language = models.CharField(
