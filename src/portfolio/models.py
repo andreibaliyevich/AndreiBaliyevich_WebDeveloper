@@ -28,7 +28,7 @@ class Project(models.Model):
     description = models.TextField(verbose_name=_('Description'))
     translated_description = TranslatedField('description')
 
-    code_url = models.URLField(verbose_name=_('Code URL'))
+    code_url = models.URLField(blank=True, verbose_name=_('Code URL'))
     project_url = models.URLField(blank=True, verbose_name=_('Project URL'))
 
     start_date = models.DateField(verbose_name=_('Start date'))
