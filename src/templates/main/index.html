@@ -19,12 +19,12 @@
   <div class="container px-4 py-5">
     <div class="text-center">
       <img class="d-block mx-auto rounded-circle shadow my-5" src="{{ ABUSER.avatar.url }}" alt="Avatar" width="280" height="280">
-      <h1 class="display-5 fw-normal text-white lh-1 mb-3">
+      <p class="display-5 fw-normal text-white lh-1 mb-3">
         <span class="fw-light">{% translate 'Hi, I am' %}</span>
         {{ ABUSER.translated_first_name }}
-      </h1>
+      </p>
       <div class="col-lg-6 mx-auto">
-        <h2 class="mb-lg-5 mb-4 text-light text-opacity-75">{% translate 'Web Developer (Python/Django/Vue.js)' %}</h2>
+        <h1 class="h2 mb-lg-5 mb-4 text-light text-opacity-75">{% translate 'Web Developer (Python/Django/Vue.js)' %}</h1>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a class="btn btn-outline-primary btn-lg px-5 me-md-2" href="{% url 'main:about' %}">{% translate 'About me' %}</a>
         </div>
@@ -72,7 +72,7 @@
         <img src="{% static 'img/home/tools_and_technologies.png' %}" class="d-block mx-lg-auto img-fluid" alt="Web Develop" loading="lazy">
       </div>
       <div class="col-lg-6 lead">
-        <h1 class="display-5 fw-normal lh-1 mb-3">{% translate 'What I do best' %}</h1>
+        <h2 class="display-5 fw-normal lh-1 mb-3">{% translate 'What I do best' %}</h2>
         <ul class="list-group py-4">
           <li class="list-group-item border-0">
             <i class="far fa-check-circle text-success"></i>
@@ -87,7 +87,7 @@
             <span>{% translate 'Converting design mockups into responsive HTML based websites' %}</span>
           </li>
         </ul>
-        <h4 class="h6 pt-2 mb-1">{% translate 'Tools and technologies' %}:</h4>
+        <h3 class="h6 pt-2 mb-1">{% translate 'Tools and technologies' %}:</h3>
         <p class="pb-1">
           {% for skill in ABUSER.skill_set.all %}
           {{ skill.name }}{% if not forloop.last %},{% endif %}
@@ -110,7 +110,7 @@
       <img src="{% static 'img/home/works.png' %}" class="d-block mx-lg-auto img-fluid" alt="My works" loading="lazy">
     </div>
     <div class="col-lg-6 lead">
-      <h1 class="display-5 fw-normal lh-1 mb-3">{% translate 'My works' %}</h1>
+      <h2 class="display-5 fw-normal lh-1 mb-3">{% translate 'My works' %}</h2>
       <p class="py-4">{% translate 'In my practice, there are sites of various kinds of activity: a blog, an online store, a social network, a business card site. I write standards-based code that is easy to maintain, cross-browser, and performant.' %}</p>
       <a class="link-primary text-decoration-none" href="{% url 'portfolio:portfolio' %}">
         {% translate 'View Portfolio' %}
@@ -129,7 +129,7 @@
         <img src="{% static 'img/home/contacts.png' %}" class="d-block mx-lg-auto img-fluid" alt="Contact" loading="lazy">
       </div>
       <div class="col-lg-6 lead">
-        <h1 class="display-5 fw-normal lh-1 mb-3">{% translate 'My Contacts' %}</h1>
+        <h2 class="display-5 fw-normal lh-1 mb-3">{% translate 'My Contacts' %}</h2>
         <ul class="py-4" style="list-style-type: none;">
           <li>
             <i class="fas fa-map-marker-alt"></i>
@@ -166,7 +166,7 @@
         </svg>
       </div>
       <div class="ms-3">
-        <h4 class="fw-bold mb-0">{% translate 'Friendly Interface' %}</h4>
+        <h2 class="h4 fw-bold mb-0">{% translate 'Friendly Interface' %}</h2>
         <p class="lead mt-2">{% translate 'Clean, modern design focused on website performance and usability.' %}</p>
       </div>
     </div>
@@ -177,7 +177,7 @@
         </svg>
       </div>
       <div class="ms-3">
-        <h4 class="fw-bold mb-0">{% translate 'Latest Technologies' %}</h4>
+        <h2 class="h4 fw-bold mb-0">{% translate 'Latest Technologies' %}</h2>
         <p class="lead mt-2">{% translate 'The websites are based on the progressive Django, Vue.js and Bootstrap frameworks.' %}</p>
       </div>
     </div>
@@ -188,7 +188,7 @@
         </svg>
       </div>
       <div class="ms-3">
-        <h4 class="fw-bold mb-0">{% translate 'Advanced Options' %}</h4>
+        <h2 class="h4 fw-bold mb-0">{% translate 'Advanced Options' %}</h2>
         <p class="lead mt-2">{% translate 'Multifunctional websites with extensive capabilities and complex architecture.' %}</p>
       </div>
     </div>
@@ -201,7 +201,7 @@
         </svg>
       </div>
       <div class="ms-3">
-        <h4 class="fw-bold mb-0">{% translate 'Modern Databases' %}</h4>
+        <h2 class="h4 fw-bold mb-0">{% translate 'Modern Databases' %}</h2>
         <p class="lead mt-2">{% translate 'PostgreSQL and Redis databases provide high performance, reliability and speed of operation.' %}</p>
       </div>
     </div>
