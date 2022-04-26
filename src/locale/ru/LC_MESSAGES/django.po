@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 13:06+0000\n"
+"POT-Creation-Date: 2022-04-26 07:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,7 +98,7 @@ msgstr "Неправильный формат!"
 msgid "Phone"
 msgstr "Телефон"
 
-#: main/models.py:57 templates/main/about.html:42
+#: main/models.py:57 templates/main/about.html:44
 msgid "Date of Birth"
 msgstr "Дата рождения"
 
@@ -111,14 +111,16 @@ msgid "Location"
 msgstr "Место нахождения"
 
 #: main/models.py:71 main/models.py:137 templates/main/about.html:7
-#: templates/main/about.html:29 templates/main/base.html:47
+#: templates/main/about.html:8 templates/main/about.html:10
+#: templates/main/about.html:31 templates/main/base.html:47
 #: templates/main/base.html:93
 msgid "About"
 msgstr "Обо мне"
 
 #: main/models.py:74 main/models.py:138 templates/main/base.html:50
 #: templates/main/base.html:94 templates/main/experience.html:7
-#: templates/main/experience.html:27
+#: templates/main/experience.html:8 templates/main/experience.html:10
+#: templates/main/experience.html:29
 msgid "Experience"
 msgstr "Опыт"
 
@@ -198,7 +200,7 @@ msgstr "Навыки"
 msgid "Slug"
 msgstr "Слаг"
 
-#: portfolio/models.py:16 templates/portfolio/project_detail.html:38
+#: portfolio/models.py:16 templates/portfolio/project_detail.html:40
 msgid "Cover"
 msgstr "Обложка"
 
@@ -242,7 +244,7 @@ msgstr "Перевод проекта"
 msgid "Project Translations"
 msgstr "Переводы проектов"
 
-#: portfolio/models.py:83 templates/portfolio/project_detail.html:42
+#: portfolio/models.py:83 templates/portfolio/project_detail.html:44
 msgid "Image"
 msgstr "Изображение"
 
@@ -275,7 +277,7 @@ msgid "Log out"
 msgstr ""
 
 #: templates/admin/base.html:66 templates/main/base.html:44
-#: templates/main/base.html:92 templates/main/index.html:7
+#: templates/main/base.html:92 templates/main/index.html:10
 msgid "Home"
 msgstr "Главная"
 
@@ -287,37 +289,38 @@ msgstr ""
 msgid "Django administration"
 msgstr ""
 
-#: templates/contact/contact.html:7 templates/contact/contact.html:29
+#: templates/contact/contact.html:7 templates/contact/contact.html:8
+#: templates/contact/contact.html:10 templates/contact/contact.html:31
 #: templates/main/base.html:56 templates/main/base.html:96
 msgid "Contact"
 msgstr "Контакт"
 
-#: templates/contact/contact.html:39
+#: templates/contact/contact.html:41
 msgid "Close"
 msgstr "Закрыть"
 
-#: templates/contact/contact.html:47
+#: templates/contact/contact.html:49
 msgid "You can send me a message and I will get back to you as soon as I can."
 msgstr ""
 "Вы можете отправить мне сообщение, и я свяжусь с вами, как только смогу."
 
-#: templates/contact/contact.html:76 templates/contact/contact.html:77
+#: templates/contact/contact.html:78 templates/contact/contact.html:79
 msgid "Your Name"
 msgstr "Ваше имя"
 
-#: templates/contact/contact.html:83 templates/contact/contact.html:84
+#: templates/contact/contact.html:85 templates/contact/contact.html:86
 msgid "Your Email"
 msgstr "Ваш эл. адрес"
 
-#: templates/contact/contact.html:90 templates/contact/contact.html:91
+#: templates/contact/contact.html:92 templates/contact/contact.html:93
 msgid "Your Message"
 msgstr "Ваше сообщение"
 
-#: templates/contact/contact.html:96
+#: templates/contact/contact.html:98
 msgid "Send Message"
 msgstr "Отправить сообщение"
 
-#: templates/contact/contact.html:98
+#: templates/contact/contact.html:100
 msgid ""
 "By clicking «Send Message», you agree with the storage and handling of your "
 "data by this website."
@@ -361,7 +364,7 @@ msgstr "Иди на главную"
 
 #: templates/errors/400.html:25 templates/errors/403.html:25
 #: templates/errors/404.html:25 templates/errors/500.html:25
-#: templates/main/about.html:51 templates/main/index.html:150
+#: templates/main/about.html:53 templates/main/index.html:152
 msgid "Contact me"
 msgstr "Связаться со мной"
 
@@ -397,11 +400,11 @@ msgstr ""
 "Сервер обнаружил непредвиденное условие, которое помешало ему выполнить "
 "запрос."
 
-#: templates/main/about.html:41
+#: templates/main/about.html:43
 msgid "Age"
 msgstr "Возраст"
 
-#: templates/main/about.html:41
+#: templates/main/about.html:43
 msgid "years old"
 msgstr "лет"
 
@@ -410,31 +413,38 @@ msgid "Loading..."
 msgstr "Загрузка..."
 
 #: templates/main/base.html:53 templates/main/base.html:95
-#: templates/portfolio/portfolio.html:7 templates/portfolio/portfolio.html:27
+#: templates/portfolio/portfolio.html:7 templates/portfolio/portfolio.html:8
+#: templates/portfolio/portfolio.html:10 templates/portfolio/portfolio.html:29
+#: templates/portfolio/project_detail.html:8
+#: templates/portfolio/project_detail.html:9
 msgid "Portfolio"
 msgstr "Портфолио"
 
-#: templates/main/experience.html:57 templates/main/index.html:113
+#: templates/main/experience.html:59 templates/main/index.html:115
 msgid "My works"
 msgstr "Мои работы"
 
-#: templates/main/index.html:23
-msgid "Hi, I am"
-msgstr "Привет, я"
-
-#: templates/main/index.html:27
+#: templates/main/index.html:7 templates/main/index.html:29
 msgid "Web Developer (Python/Django/Vue.js)"
 msgstr "Веб-разработчик (Python/Django/Vue.js)"
 
-#: templates/main/index.html:29
+#: templates/main/index.html:8
+msgid "Web, Developer, Python, Django, Vue.js"
+msgstr "Веб, разработчик, Python, Django, Vue.js"
+
+#: templates/main/index.html:25
+msgid "Hi, I am"
+msgstr "Привет, я"
+
+#: templates/main/index.html:31
 msgid "About me"
 msgstr "Обо мне"
 
-#: templates/main/index.html:44
+#: templates/main/index.html:46
 msgid "Quality Work"
 msgstr "Качественная работа"
 
-#: templates/main/index.html:45
+#: templates/main/index.html:47
 msgid ""
 "My perfectionism makes me write quality code, paying attention to the little "
 "things."
@@ -442,21 +452,21 @@ msgstr ""
 "Мой перфекционизм заставляет меня писать качественный код, уделяя внимание "
 "мелочам."
 
-#: templates/main/index.html:53
+#: templates/main/index.html:55
 msgid "Effective Communication"
 msgstr "Эффективная коммуникация"
 
-#: templates/main/index.html:54
+#: templates/main/index.html:56
 msgid "Openness, honesty and friendliness help me communicate at a high level."
 msgstr ""
 "Открытость, честность и доброжелательность помогают мне общаться на высоком "
 "уровне."
 
-#: templates/main/index.html:62
+#: templates/main/index.html:64
 msgid "Development speed"
 msgstr "Скорость разработки"
 
-#: templates/main/index.html:63
+#: templates/main/index.html:65
 msgid ""
 "Thanks to modern tools, as well as my experience, the work is done quite "
 "quickly."
@@ -464,33 +474,33 @@ msgstr ""
 "Благодаря современным инструментам, а также моему опыту, работа выполняется "
 "довольно быстро."
 
-#: templates/main/index.html:75
+#: templates/main/index.html:77
 msgid "What I do best"
 msgstr "Что я делаю лучше всего"
 
-#: templates/main/index.html:79
+#: templates/main/index.html:81
 msgid "Front-end and Back-end development"
 msgstr "Front-end и Back-end разработка"
 
-#: templates/main/index.html:83
+#: templates/main/index.html:85
 msgid "Building dynamic websites and web applications with latest technologies"
 msgstr ""
 "Создание динамических веб-сайтов и веб-приложений с использованием новейших "
 "технологий"
 
-#: templates/main/index.html:87
+#: templates/main/index.html:89
 msgid "Converting design mockups into responsive HTML based websites"
 msgstr "Преобразование макетов дизайна в адаптивные веб-сайты на основе HTML"
 
-#: templates/main/index.html:90
+#: templates/main/index.html:92
 msgid "Tools and technologies"
 msgstr "Инструменты и технологии"
 
-#: templates/main/index.html:97
+#: templates/main/index.html:99
 msgid "My experience"
 msgstr "Мой опыт"
 
-#: templates/main/index.html:114
+#: templates/main/index.html:116
 msgid ""
 "In my practice, there are sites of various kinds of activity: a blog, an "
 "online store, a social network, a business card site. I write standards-"
@@ -500,51 +510,51 @@ msgstr ""
 "магазин, социальная сеть, сайт-визитка. Я пишу код на основе стандартов, "
 "который является простым в обслуживании, кроссбраузерным и производительным."
 
-#: templates/main/index.html:116
+#: templates/main/index.html:118
 msgid "View Portfolio"
 msgstr "Посмотреть портфолио"
 
-#: templates/main/index.html:132
+#: templates/main/index.html:134
 msgid "My Contacts"
 msgstr "Мои контакты"
 
-#: templates/main/index.html:169
+#: templates/main/index.html:171
 msgid "Friendly Interface"
 msgstr "Дружественный интерфейс"
 
-#: templates/main/index.html:170
+#: templates/main/index.html:172
 msgid "Clean, modern design focused on website performance and usability."
 msgstr ""
 "Чистый, современный дизайн, ориентированный на производительность и удобство "
 "использования веб-сайта."
 
-#: templates/main/index.html:180
+#: templates/main/index.html:182
 msgid "Latest Technologies"
 msgstr "Новейшие технологии"
 
-#: templates/main/index.html:181
+#: templates/main/index.html:183
 msgid ""
 "The websites are based on the progressive Django, Vue.js and Bootstrap "
 "frameworks."
 msgstr ""
 "Сайты основаны на прогрессивных фреймворках Django, Vue.js и Bootstrap."
 
-#: templates/main/index.html:191
+#: templates/main/index.html:193
 msgid "Advanced Options"
 msgstr "Расширенные опции"
 
-#: templates/main/index.html:192
+#: templates/main/index.html:194
 msgid ""
 "Multifunctional websites with extensive capabilities and complex "
 "architecture."
 msgstr ""
 "Многофункциональные сайты с широкими возможностями и сложной архитектурой."
 
-#: templates/main/index.html:204
+#: templates/main/index.html:206
 msgid "Modern Databases"
 msgstr "Современные базы данных"
 
-#: templates/main/index.html:205
+#: templates/main/index.html:207
 msgid ""
 "PostgreSQL and Redis databases provide high performance, reliability and "
 "speed of operation."
@@ -552,19 +562,19 @@ msgstr ""
 "Базы данных PostgreSQL и Redis обеспечивают высокую производительность, "
 "надежность и скорость работы."
 
-#: templates/portfolio/portfolio.html:41
+#: templates/portfolio/portfolio.html:43
 msgid "No projects yet."
 msgstr "Пока нет проектов."
 
-#: templates/portfolio/project_detail.html:31
 #: templates/portfolio/project_detail.html:33
+#: templates/portfolio/project_detail.html:35
 msgid "Slide"
 msgstr "Слайд"
 
-#: templates/portfolio/project_detail.html:54
+#: templates/portfolio/project_detail.html:56
 msgid "View Site"
 msgstr "Посмотреть сайт"
 
-#: templates/portfolio/project_detail.html:56
+#: templates/portfolio/project_detail.html:59
 msgid "View Code"
 msgstr "Просмотреть код"
