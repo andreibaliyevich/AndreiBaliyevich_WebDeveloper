@@ -5,8 +5,10 @@
 {% load portfolio_extras %}
 
 
-{% block title %}{{ object.name }}{% endblock title %}
+{% block meta_description %}{{ ABUSER.translated_first_name }} {{ ABUSER.translated_last_name }}. {% translate 'Portfolio' %}. {{ object.name }}{% endblock meta_description %}
+{% block meta_keywords %}{{ ABUSER.translated_first_name }}, {{ ABUSER.translated_last_name }}, {% translate 'Portfolio' %}, {{ object.name }}{% endblock meta_keywords %}
 
+{% block title %}{{ object.name }}{% endblock title %}
 
 {% block stylesheet %}{% endblock stylesheet %}
 

@@ -4,8 +4,10 @@
 {% load static %}
 
 
-{% block title %}{% translate 'About' %}{% endblock title %}
+{% block meta_description %}{{ ABUSER.translated_first_name }} {{ ABUSER.translated_last_name }}. {% translate 'About' %}{% endblock meta_description %}
+{% block meta_keywords %}{{ ABUSER.translated_first_name }}, {{ ABUSER.translated_last_name }}, {% translate 'About' %}{% endblock meta_keywords %}
 
+{% block title %}{% translate 'About' %}{% endblock title %}
 
 {% block stylesheet %}{% endblock stylesheet %}
 
