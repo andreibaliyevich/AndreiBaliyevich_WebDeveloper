@@ -40,6 +40,14 @@
     <div class="ms-2">{{ message }}</div>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% translate 'Close' %}"></button>
   </div>
+  {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+  <div class="alert alert-danger d-flex align-items-center alert-dismissible fade show mt-5" role="alert">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </svg>
+    <div class="ms-2">{{ message }}</div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% translate 'Close' %}"></button>
+  </div>
   {% endif %}
   {% endfor %}
   {% endif %}
@@ -75,26 +83,27 @@
       <form class="bg-light shadow rounded-1 p-4 p-md-5" action="{% url 'contact:contact' %}" method="post">
         {% csrf_token %}
         <div class="form-floating mb-3">
-          <input type="text" name="name" maxlength="250" class="form-control{% if request.method == 'POST' %}{% if form.name.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" placeholder="{% translate 'Your Name' %}" title="" required="" id="id_name"{% if form.name.data %} value="{{ form.name.data }}"{% endif %}>
+          <input type="text" name="name" maxlength="250" class="form-control{% if request.method == 'POST' %}{% if message_form.name.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" placeholder="{% translate 'Your Name' %}" title="" required="" id="id_name"{% if message_form.name.data %} value="{{ message_form.name.data }}"{% endif %}>
           <label for="id_name">{% translate 'Your Name' %}</label>
-          {% for error_message in form.name.errors %}
+          {% for error_message in message_form.name.errors %}
           <div class="invalid-feedback">{{ error_message }}</div>
           {% endfor %}
         </div>
         <div class="form-floating mb-3">
-          <input type="email" name="email" maxlength="254" class="form-control{% if request.method == 'POST' %}{% if form.email.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" placeholder="{% translate 'Your Email' %}" title="" required="" id="id_email"{% if form.email.data %} value="{{ form.email.data }}"{% endif %}>
+          <input type="email" name="email" maxlength="254" class="form-control{% if request.method == 'POST' %}{% if message_form.email.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" placeholder="{% translate 'Your Email' %}" title="" required="" id="id_email"{% if message_form.email.data %} value="{{ message_form.email.data }}"{% endif %}>
           <label for="id_email">{% translate 'Your Email' %}</label>
-          {% for error_message in form.email.errors %}
+          {% for error_message in message_form.email.errors %}
           <div class="invalid-feedback">{{ error_message }}</div>
           {% endfor %}
         </div>
         <div class="form-floating mb-3">
-          <textarea name="content" class="form-control{% if request.method == 'POST' %}{% if form.content.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" placeholder="{% translate 'Your Message' %}" title="" required="" id="id_content" style="height: 100px;">{% if form.content.data %}{{ form.content.data }}{% endif %}</textarea>
+          <textarea name="content" class="form-control{% if request.method == 'POST' %}{% if message_form.content.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" placeholder="{% translate 'Your Message' %}" title="" required="" id="id_content" style="height: 100px;">{% if message_form.content.data %}{{ message_form.content.data }}{% endif %}</textarea>
           <label for="id_content">{% translate 'Your Message' %}</label>
-          {% for error_message in form.content.errors %}
+          {% for error_message in message_form.content.errors %}
           <div class="invalid-feedback">{{ error_message }}</div>
           {% endfor %}
         </div>
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
         <button class="w-100 btn btn-primary btn-lg" type="submit">{% translate 'Send Message' %}</button>
         <hr class="my-4">
         <small class="text-muted">{% translate 'By clicking «Send Message», you agree with the storage and handling of your data by this website.' %}</small>
@@ -131,4 +140,13 @@
 {% endblock content %}
 
 
-{% block javascript %}{% endblock javascript %}
+{% block javascript %}
+<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
+<script type="text/javascript">
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{ recaptcha_site_key }}', {action: "{% url 'contact:contact' %}"}).then(function(token) {
+      document.getElementById('g-recaptcha-response').value = token;
+    });
+  });
+</script>
+{% endblock javascript %}

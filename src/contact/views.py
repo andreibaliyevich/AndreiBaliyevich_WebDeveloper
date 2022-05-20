@@ -1,20 +1,31 @@
-from django.contrib.messages.views import SuccessMessageMixin
-from django.urls import reverse_lazy
+from django.conf import settings
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.utils.translation import gettext_lazy as _
-from django.views.generic.edit import CreateView
-from .models import Message
+from .forms import MessageForm
+from .services import check_recaptcha
 from .tasks import send_contact_to_email
 
 
-class ContactView(SuccessMessageMixin, CreateView):
+def contact(request):
     """ Contact page """
-    model = Message
-    fields = ['name', 'email', 'content']
-    template_name = 'contact/contact.html'
-    success_url = reverse_lazy('contact:contact')
-    success_message = _('Your message has been sent!')
+    if request.method == 'POST':
+        message_form = MessageForm(request.POST)
 
-    def form_valid(self, form):
-        send_contact_to_email.delay(
-            self.request.LANGUAGE_CODE, form.cleaned_data)
-        return super().form_valid(form)
+        if check_recaptcha(request):
+            if message_form.is_valid():
+                message_form.save()
+                send_contact_to_email.delay(
+                    request.LANGUAGE_CODE, message_form.cleaned_data)
+                messages.success(request, _('Your message has been sent!'))
+                return redirect('contact:contact')
+        else:
+            messages.error(request, _('Invalid reCAPTCHA. Please try again.'))
+    else:
+        message_form = MessageForm()
+
+    context = {
+        'message_form': message_form,
+        'recaptcha_site_key': settings.GOOGLE_RECAPTCHA_SITE_KEY,
+    }
+    return render(request, 'contact/contact.html', context)
