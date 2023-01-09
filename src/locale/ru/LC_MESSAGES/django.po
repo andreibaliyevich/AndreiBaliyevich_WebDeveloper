@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-20 21:31+0000\n"
+"POT-Creation-Date: 2023-01-09 09:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -429,12 +429,12 @@ msgid "My works"
 msgstr "Мои работы"
 
 #: templates/main/index.html:7 templates/main/index.html:29
-msgid "Web Developer (Python/Django/Vue.js)"
-msgstr "Веб-разработчик (Python/Django/Vue.js)"
+msgid "Full Stack Web Developer"
+msgstr "Фулстек веб-разработчик"
 
 #: templates/main/index.html:8
-msgid "Web, Developer, Python, Django, Vue.js"
-msgstr "Веб, разработчик, Python, Django, Vue.js"
+msgid "Full, Stack, Web, Developer"
+msgstr "Фулстек, веб-разработчик"
 
 #: templates/main/index.html:25
 msgid "Hi, I am"
