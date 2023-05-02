@@ -117,8 +117,8 @@
     <div id="map" style="height: 450px;"></div>
 
     <script>
-      const latitude = parseFloat("{{ ABUSER.location.y }}".replace(",","."))
-      const longitude = parseFloat("{{ ABUSER.location.x }}".replace(",","."))
+      const latitude = parseFloat("{{ ABUSER.location.y }}".replace(",","."));
+      const longitude = parseFloat("{{ ABUSER.location.x }}".replace(",","."));
 
       var map = L.map('map').setView([latitude, longitude], 6);
       var marker = L.marker([latitude, longitude]).addTo(map)
