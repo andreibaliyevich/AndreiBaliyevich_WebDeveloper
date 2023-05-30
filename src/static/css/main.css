@@ -12,7 +12,7 @@
   border-radius: 5em;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #808080;
+  background-color: #ff8a00;
 }
 
 #loading {
