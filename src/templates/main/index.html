@@ -4,8 +4,8 @@
 {% load static %}
 
 
-{% block meta_description %}{{ ABUSER.translated_first_name }} {{ ABUSER.translated_last_name }}. {% translate 'Full Stack Web Developer' %}{% endblock meta_description %}
-{% block meta_keywords %}{{ ABUSER.translated_first_name }}, {{ ABUSER.translated_last_name }}, {% translate 'Full, Stack, Web, Developer' %}{% endblock meta_keywords %}
+{% block meta_description %}{{ ABUSER.translated_first_name }} {{ ABUSER.translated_last_name }}. {% translate 'Web Developer' %}{% endblock meta_description %}
+{% block meta_keywords %}{{ ABUSER.translated_first_name }}, {{ ABUSER.translated_last_name }}, {% translate 'Web, Developer' %}{% endblock meta_keywords %}
 
 {% block title %}{% translate 'Home' %}{% endblock title %}
 
@@ -26,7 +26,7 @@
         {{ ABUSER.translated_first_name }}
       </p>
       <div class="col-lg-6 mx-auto">
-        <h1 class="h2 mb-lg-5 mb-4 text-light text-opacity-75">{% translate 'Full Stack Web Developer' %}</h1>
+        <h1 class="h2 mb-lg-5 mb-4 text-light text-opacity-75">{% translate 'Web Developer' %}</h1>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a class="btn btn-outline-primary btn-lg px-5 me-md-2" href="{% url 'main:about' %}">{% translate 'About me' %}</a>
         </div>
