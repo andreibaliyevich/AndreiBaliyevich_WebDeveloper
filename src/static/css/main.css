@@ -1,15 +1,12 @@
-* {
-  scrollbar-color: #c0c0c0;
-  scrollbar-width: thin;
-}
 ::-webkit-scrollbar {
   width: 0.5em;
-  height: 0.5em;
+}
+::-webkit-scrollbar-track {
   background-color: #f5f5f5;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #c0c0c0;
-  border-radius: 5em;
+  border-radius: 1em;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #ff8a00;
