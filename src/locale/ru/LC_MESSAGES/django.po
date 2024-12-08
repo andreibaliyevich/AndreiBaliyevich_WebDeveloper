@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-13 09:53+0000\n"
+"POT-Creation-Date: 2024-12-08 19:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,16 +114,14 @@ msgstr "Адрес"
 msgid "Location"
 msgstr "Место нахождения"
 
-#: main/models.py:71 main/models.py:137 templates/main/about.html:7
-#: templates/main/about.html:8 templates/main/about.html:10
+#: main/models.py:71 main/models.py:137 templates/main/about.html:10
 #: templates/main/about.html:31 templates/main/base.html:48
 #: templates/main/base.html:94
 msgid "About"
 msgstr "Обо мне"
 
 #: main/models.py:74 main/models.py:138 templates/main/base.html:51
-#: templates/main/base.html:95 templates/main/experience.html:7
-#: templates/main/experience.html:8 templates/main/experience.html:10
+#: templates/main/base.html:95 templates/main/experience.html:10
 #: templates/main/experience.html:29
 msgid "Experience"
 msgstr "Опыт"
@@ -293,7 +291,23 @@ msgstr ""
 msgid "Django administration"
 msgstr ""
 
-#: templates/contact/contact.html:7 templates/contact/contact.html:8
+#: templates/contact/contact.html:7
+msgid ""
+"Contact me for web development services using Python, Django, and Vue. Learn "
+"how I can help you create efficient and modern solutions for your business."
+msgstr ""
+"Свяжитесь со мной для разработки веб-сайтов и приложений на Python, Django и "
+"Vue. Узнайте, как я могу помочь вам в создании эффективных и современных "
+"решений для вашего бизнеса."
+
+#: templates/contact/contact.html:8
+msgid ""
+"contact, web development, Python, Django, Vue, web developer, website "
+"development, web applications, programming, contact developer"
+msgstr ""
+"контакты, веб-разработка, Python, Django, Vue, веб-разработчик, разработка "
+"сайтов, веб-приложений, программирование, связаться с разработчиком"
+
 #: templates/contact/contact.html:10 templates/contact/contact.html:31
 #: templates/main/base.html:57 templates/main/base.html:97
 msgid "Contact"
@@ -404,6 +418,26 @@ msgstr ""
 "Сервер обнаружил непредвиденное условие, которое помешало ему выполнить "
 "запрос."
 
+#: templates/main/about.html:7
+msgid ""
+"Learn more about me, a web developer specializing in Python, Django, and "
+"Vue. Explore my skills, experience, and approach to building modern, "
+"scalable web applications and websites."
+msgstr ""
+"Узнайте больше обо мне, веб-разработчике, специализирующемся на Python, "
+"Django и Vue. Ознакомьтесь с моими навыками, опытом и подходом к созданию "
+"современных, масштабируемых веб-приложений и сайтов."
+
+#: templates/main/about.html:8
+msgid ""
+"about me, web developer, Python, Django, Vue, web development, programming, "
+"full-stack developer, Python developer, Django developer, Vue developer, "
+"professional web development"
+msgstr ""
+"обо мне, веб-разработчик, Python, Django, Vue, веб-разработка, "
+"программирование, full-stack разработчик, Python разработчик, Django "
+"разработчик, Vue разработчик, профессиональная веб-разработка"
+
 #: templates/main/about.html:43
 msgid "Age"
 msgstr "Возраст"
@@ -417,28 +451,61 @@ msgid "Loading..."
 msgstr "Загрузка..."
 
 #: templates/main/base.html:54 templates/main/base.html:96
-#: templates/portfolio/portfolio.html:7 templates/portfolio/portfolio.html:8
 #: templates/portfolio/portfolio.html:10 templates/portfolio/portfolio.html:29
-#: templates/portfolio/project_detail.html:8
-#: templates/portfolio/project_detail.html:9
 msgid "Portfolio"
 msgstr "Портфолио"
+
+#: templates/main/experience.html:7
+msgid ""
+"My experience in web development using Python, Django, and Vue. Learn about "
+"the projects I’ve worked on, the skills I possess, and the approach I take "
+"when building web applications and websites."
+msgstr ""
+"Мой опыт в веб-разработке с использованием Python, Django и Vue. Узнайте о "
+"реализованных проектах, навыках и подходах, которые я применяю при "
+"разработке веб-приложений и сайтов."
+
+#: templates/main/experience.html:8
+msgid ""
+"experience, web development, Python, Django, Vue, web developer, application "
+"development, Python projects, Django experience, Vue experience, "
+"professional programming skills"
+msgstr ""
+"опыт, веб-разработка, Python, Django, Vue, веб-разработчик, разработка "
+"приложений, проекты на Python, опыт работы с Django, опыт работы с Vue, "
+"профессиональные навыки в программировании"
 
 #: templates/main/experience.html:59 templates/main/index.html:115
 msgid "My works"
 msgstr "Мои работы"
 
-#: templates/main/index.html:7 templates/main/index.html:29
-msgid "Web Developer"
-msgstr "Веб-разработчик"
+#: templates/main/index.html:7
+msgid ""
+"Professional web development using Python, Django, and Vue. Building modern, "
+"efficient, and responsive websites and applications with the best "
+"technologies. Examples of projects and a web developer portfolio."
+msgstr ""
+"Профессиональная веб-разработка на Python, Django и Vue. Создание "
+"современных, эффективных и адаптивных сайтов и приложений с использованием "
+"лучших технологий. Примеры проектов и портфолио веб-разработчика."
 
 #: templates/main/index.html:8
-msgid "Web, Developer"
-msgstr "Веб, разработчик"
+msgid ""
+"web development, Python, Django, Vue, web developer, website creation, web "
+"applications, Python development, Django development, Vue frontend, "
+"programming, portfolio development"
+msgstr ""
+"веб-разработка, Python, Django, Vue, веб-программист, создание сайтов, веб-"
+"приложения, разработка на Python, разработка на Django, фронтенд Vue, "
+"программирование, разработка портфолио"
 
 #: templates/main/index.html:25
 msgid "Hi, I am"
 msgstr "Привет, я"
+
+#: templates/main/index.html:29
+msgid "Web Developer"
+msgstr "Веб-разработчик"
 
 #: templates/main/index.html:31
 msgid "About me"
@@ -565,6 +632,28 @@ msgid ""
 msgstr ""
 "Базы данных PostgreSQL и Redis обеспечивают высокую производительность, "
 "надежность и скорость работы."
+
+#: templates/portfolio/portfolio.html:7
+#: templates/portfolio/project_detail.html:8
+msgid ""
+"Portfolio of a web developer specializing in Python, Django, and Vue. "
+"Explore my projects and works created using modern technologies to build "
+"efficient web applications and websites."
+msgstr ""
+"Портфолио веб-разработчика, специализирующегося на Python, Django и Vue. "
+"Ознакомьтесь с моими проектами и работами, выполненными с использованием "
+"современных технологий для создания эффективных веб-приложений и сайтов."
+
+#: templates/portfolio/portfolio.html:8
+#: templates/portfolio/project_detail.html:9
+msgid ""
+"portfolio, web development, Python, Django, Vue, projects, web developer, "
+"website development, web applications, Python projects, Django projects, Vue "
+"projects"
+msgstr ""
+"портфолио, веб-разработка, Python, Django, Vue, проекты, веб-разработчик, "
+"разработка сайтов, веб-приложений, Python проекты, Django проекты, Vue "
+"проекты"
 
 #: templates/portfolio/portfolio.html:43
 msgid "No projects yet."
