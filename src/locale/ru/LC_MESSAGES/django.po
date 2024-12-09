@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 19:38+0000\n"
+"POT-Creation-Date: 2024-12-09 04:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,13 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: contact/models.py:7 main/models.py:181 portfolio/models.py:13
+#: contact/models.py:7 main/models.py:192 portfolio/models.py:13
 #: templates/email/contact_to_email.html:5
 #: templates/email/contact_to_email_text.html:4
 msgid "Name"
 msgstr "Имя"
 
-#: contact/models.py:8 main/models.py:17
+#: contact/models.py:8 main/models.py:19
 #: templates/email/contact_to_email.html:6
 #: templates/email/contact_to_email_text.html:5
 msgid "Email"
@@ -82,119 +82,124 @@ msgstr "У суперпользователя должно быть is_staff=Tru
 msgid "Superuser must have is_superuser=True."
 msgstr "У суперпользователя должно быть is_superuser=True."
 
-#: main/models.py:22 main/models.py:132
+#: main/models.py:24 main/models.py:143
 msgid "First name"
 msgstr "Имя"
 
-#: main/models.py:27 main/models.py:133
+#: main/models.py:29 main/models.py:144
 msgid "Last name"
 msgstr "Фамилия"
 
-#: main/models.py:41
+#: main/models.py:43
 msgid "Avatar"
 msgstr "Аватар"
 
-#: main/models.py:49
+#: main/models.py:51
 msgid "Wrong format!"
 msgstr "Неправильный формат!"
 
-#: main/models.py:52
+#: main/models.py:54
 msgid "Phone"
 msgstr "Телефон"
 
-#: main/models.py:57 templates/main/about.html:44
+#: main/models.py:59 templates/main/about.html:44
 msgid "Date of Birth"
 msgstr "Дата рождения"
 
-#: main/models.py:63 main/models.py:135
+#: main/models.py:65 main/models.py:146
 msgid "Address"
 msgstr "Адрес"
 
-#: main/models.py:68
+#: main/models.py:70
 msgid "Location"
 msgstr "Место нахождения"
 
-#: main/models.py:71 main/models.py:137 templates/main/about.html:10
+#: main/models.py:73 main/models.py:148 templates/main/about.html:10
 #: templates/main/about.html:31 templates/main/base.html:48
 #: templates/main/base.html:94
 msgid "About"
 msgstr "Обо мне"
 
-#: main/models.py:74 main/models.py:138 templates/main/base.html:51
+#: main/models.py:76 main/models.py:149 templates/main/base.html:51
 #: templates/main/base.html:95 templates/main/experience.html:10
 #: templates/main/experience.html:29
 msgid "Experience"
 msgstr "Опыт"
 
-#: main/models.py:77
+#: main/models.py:79
 msgid "Active"
 msgstr "Активный"
 
-#: main/models.py:80
+#: main/models.py:82
 msgid "Staff status"
 msgstr "Статус персонала"
 
-#: main/models.py:84
+#: main/models.py:86
 msgid "Superuser status"
 msgstr "Статус суперпользователя"
 
-#: main/models.py:89
+#: main/models.py:91
 msgid "Last login"
 msgstr "Последний вход"
 
-#: main/models.py:93
+#: main/models.py:95
 msgid "Date joined"
 msgstr "Дата присоединения"
 
-#: main/models.py:113 main/models.py:124 main/models.py:152 main/models.py:178
+#: main/models.py:117
+#, python-format
+msgid "An instance %(class_name)s already exists."
+msgstr "Экземпляр %(class_name)s уже существует."
+
+#: main/models.py:124 main/models.py:135 main/models.py:163 main/models.py:189
 msgid "User"
 msgstr "Пользователь"
 
-#: main/models.py:114
+#: main/models.py:125
 msgid "Users"
 msgstr "Пользователи"
 
-#: main/models.py:129 portfolio/models.py:64
+#: main/models.py:140 portfolio/models.py:64
 msgid "Language"
 msgstr "Язык"
 
-#: main/models.py:141
+#: main/models.py:152
 msgid "ABUser Translation"
 msgstr "ABUser перевод"
 
-#: main/models.py:142
+#: main/models.py:153
 msgid "ABUser Translations"
 msgstr "ABUser переводы"
 
-#: main/models.py:157
+#: main/models.py:168
 msgid "Name of icon"
 msgstr "Название иконки"
 
-#: main/models.py:159
+#: main/models.py:170
 msgid "URL of Link"
 msgstr "URL ссылки"
 
-#: main/models.py:163 main/models.py:191
+#: main/models.py:174 main/models.py:202
 msgid "Position"
 msgstr "Позиция"
 
-#: main/models.py:167
+#: main/models.py:178
 msgid "Social Link"
 msgstr "Социальная ссылка"
 
-#: main/models.py:168
+#: main/models.py:179
 msgid "Social Links"
 msgstr "Социальные ссылки"
 
-#: main/models.py:186
+#: main/models.py:197
 msgid "Progress"
 msgstr "Прогресс"
 
-#: main/models.py:195
+#: main/models.py:206
 msgid "Skill"
 msgstr "Навык"
 
-#: main/models.py:196
+#: main/models.py:207
 msgid "Skills"
 msgstr "Навыки"
 

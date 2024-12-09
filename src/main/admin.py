@@ -61,5 +61,8 @@ class ABUserAdmin(admin.OSMGeoAdmin):
     readonly_fields = ('last_login', 'date_joined')
     inlines = (ABUserTranslationInline, SocialLinkInline, SkillInline)
 
+    def has_add_permission(self, request):
+        return not ABUser.objects.exists()
+
 
 admin.site.register(ABUser, ABUserAdmin)

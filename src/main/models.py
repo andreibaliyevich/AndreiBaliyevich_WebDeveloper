@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.contrib.gis.db import models
 from django.contrib.gis.geos import Point
+from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, RegexValidator
 from django.utils import timezone
 from django.utils import translation
@@ -10,6 +11,7 @@ from django.utils.translation import gettext_lazy as _
 from main.model_fields import TranslatedField
 from .managers import ABUserManager
 from .utilities import get_user_avatar_path
+
 
 
 class ABUser(AbstractBaseUser, PermissionsMixin):
@@ -108,6 +110,14 @@ class ABUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    def clean(self):
+        if not self.pk and self.__class__.objects.exists():
+            raise ValidationError(
+                _('An instance %(class_name)s already exists.') % {
+                    'class_name': self.__class__.__name__,
+                }
+            )
 
     class Meta:
         verbose_name = _('User')
